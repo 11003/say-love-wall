@@ -1,0 +1,523 @@
+@font-face {
+    font-family: zdy;
+    src: url('././fonts/Flat-UI-Icons-24.ttf');
+    src: url('././fonts/Flat-UI-Icons-24.woff') format('woff');
+    src: url('././fonts/Flat-UI-Icons-24.woff') format('truetype');
+}
+html, body{
+    font-family:zdy,sans-serif;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    overflow-scrolling: touch;
+}
+
+.navbar li a {
+    background-color: #000;
+}
+.Header img{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 90rem;
+}
+.ui-icon-article:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/article_white.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-articleNow:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/wenzhang.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-heart:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/heart_white.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-heartNow:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/upvote.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-search:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/search_white.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-searchNow:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/sousuo.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-help:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/help_white.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-helpNow:after {
+    /*background-color: #fff;*/
+    background-image: url("../images/icon/help.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-like:after {
+    background-color: #fff;
+    background-image: url("../images/icon/dianzan.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-liked:after {
+    background-color: #fff;
+    background-image: url("../images/icon/dianzanhou.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+.ui-icon-like, .ui-icon-like:after{
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;	/* Firefox 4 */
+  -webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+  -o-transition: all 0.3s;	/* Opera */
+}
+.ui-icon-guess:after {
+    background-color: #fff;
+    background-image: url("../images/icon/jingcai.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-comment:after {
+    background-color: #fff;
+    background-image: url("../images/icon/pinglun.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+
+.ui-icon-share:after {
+    background-color: #fff;
+    background-image: url("../images/icon/fenxiang.png");
+    /**你的图片，路径是相对于当前使用文件可以访问到的*/
+    background-size: 18px 18px;
+    border-radius: 0;
+    /*图标形态，0=方形，不设置就是默认的圆形*/
+}
+pre {
+    font-family:zdy,sans-serif;
+white-space: pre-wrap!important;
+word-wrap: break-word!important;
+/*overflow: auto;*/
+}
+.loading{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 82px;
+}
+
+#Header{
+  background-color: initial;
+  /*background-image: url("../images/header.png");*/
+  background-position: center;
+  background-repeat: repeat-x;
+  border-color: initial;
+  background-size: contain;
+  border: 0px none;
+  color: #fff;
+  text-shadow: none;
+  font-weight: 700;
+}
+.Header .Header-title{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ui-header .ui-title, .ui-footer .ui-title{
+  text-shadow: 1px 2px #B71C1C;
+  font-size: 24px;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active{
+  background-color: #ff3333;
+  border-color:#ff3333;
+
+}
+html body .post .action ul li .ui-btn, html body .post .action ul li .ui-btn-active{
+  background-color: #fff;
+  border-color:#fff;
+  border-top: 1px solid #eee;
+}
+
+html body .action ul li .ui-btn:link, html body .action ul li .ui-btn:visited, html body .action ul li .ui-btn:active{
+  box-shadow: none;
+}
+#guess-Name-Popup{
+    width:15rem;
+}
+#guess-Name-Popup > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline, #comment-Popup > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline{
+  display: block;
+  margin: 0 auto;
+}
+#guess-Name-Popup p{
+  color: #8c8888;
+  font-size: 14px;
+}
+#guess-hint, #comment-submit, #comment-hint{
+  color: #ff3333;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#comment-lists{
+overflow-x: hidden;
+    max-height:30rem;
+    height: 100%;
+}
+#comment-lists ul{
+    padding-left: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+#comment-lists ul{
+  padding-left: 0;
+}
+#comment-lists ul li{
+  list-style-type: none;
+  border-bottom: 1px solid #eee;
+}
+#comment-lists .comment-ip{
+  text-align: left;
+  float: left;
+  color: #b3b3b3;
+  margin-top: 10px;
+  font-size: 8px;
+}
+#comment-lists .comment-floor{
+  float: left;
+  padding: 4px;
+  background: #eee;
+  color: #000;
+  text-shadow: none;
+  margin-right: 10px;
+}
+#comment-lists .comment-time{
+    /* float: right; */
+    display: block;
+    text-align: right;
+    text-indent: 0em;
+    padding: 0px;
+    color: #b3b3b3;
+    /* padding-right: 10px; */
+    font-size: 12px;
+    margin-top: 10px;
+}
+#comment-lists p{
+  margin-top: 10px;
+  clear: both;
+  text-indent: 2em;
+}
+html body .action .ui-btn-active{
+  color: #000;
+  text-shadow: none;
+}
+.ui-page-header-fullscreen>.ui-content, .ui-page-footer-fullscreen>.ui-content{
+  /*padding-bottom: 60px;*/
+}
+@media screen and (max-width: 768px){
+    .post{
+        max-width: 90%;
+    }
+}
+.post{
+    max-width:87%;
+    background: #fff;
+    padding: 10px;
+    /*max-height:380px;*/
+    /*overflow-y: scroll;   下拉框*/
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 4px 6px #eee;
+}
+.post-title{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.post-title ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  /*text-align: center;*/
+  color: #ef5350;
+  font-size: 18px;
+  text-align: left;
+}
+.post-title ul li{
+  display: inline;
+  margin-right: 10px;
+}
+.post-title img{
+  position: relative;
+  top: 1px;
+  height: 12px;
+}
+.post-body{
+
+}
+.post-body .post-body-content{
+  word-wrap: break-word;
+  text-indent: 2em;
+  padding: 10px;
+  padding-bottom: 0px;
+  /*color: #FF9800;*/
+  color: #333;
+  text-align: left;
+}
+.post-actions{
+
+}
+.post-body-time{
+  text-align: right;
+  text-indent: 0em;
+  padding: 0px;
+  color: #b3b3b3;
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+.post-background1{
+  background-image: url("../images/posts_1.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position: top;
+  background-size: contain;
+}
+
+.post-background2{
+  background-image: url("../images/posts_2.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position: top;
+  background-size: contain;
+}
+
+.post-background3{
+  background-image: url("../images/posts_3.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position: top;
+  background-size: contain;
+}
+
+/*性别*/
+/*.male{*/
+  /*color: #03a9f4;*/
+  /*border-bottom: 2px dashed #03a9f4;*/
+/*}*/
+/*.female{*/
+  /*color: #ff3333;*/
+  /*border-bottom: 2px dashed #ff3333;*/
+/*}*/
+/*.secrecy{*/
+  /*color: #424242;*/
+  /*border-bottom: 2px dashed #424242;*/
+/*}*/
+.male{
+    color: #03a9f4;
+    border-bottom: 2px dashed #03a9f4;
+    line-height:30px;
+}
+.female{
+    color: #ff3333;
+    border-bottom: 2px dashed #ff3333;
+    line-height:30px;
+}
+.secrecy{
+    color: #424242;
+    border-bottom: 2px dashed #424242;
+    line-height:30px;
+}
+
+#link a{
+  display: block;
+  word-wrap: break-word;
+}
+
+#footer > div > ul a{
+  background-color: #000;
+  border-color: none;
+  color: #fff;
+  text-shadow: none;
+  border-style:none;
+  border-radius: 0px;
+  border: 0px none #000;
+}
+
+/*表白*/
+#saylove-box{
+  padding: 10px;
+  max-width: 320px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 300px;
+}
+.guess-hint{
+  font-size: 12px;
+  color: #757575;
+}
+#saylove-box > fieldset > div > div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
+
+}
+#saylove-box > fieldset > div > div.ui-select{
+
+}
+
+#textCountBox, #textCount{
+  font-size: 14px;
+  text-align: right;
+  color: #757575;
+  padding-top: 0px;
+  margin-top: 0;
+}
+#submit{
+    color: #fff;
+    background-color: #0ae;
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+    float: right;
+}
+#hint img{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  height: 82px;
+}
+#Hint, #comment-hint{
+  color: #ff3333;
+  display: block;
+  word-wrap: break-word;
+  background-color: white;
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+/*搜索页*/
+#search-bars{
+  /*max-width: 320px;*/
+  display: block;
+  margin: 0 auto;
+  /*text-align: center;*/
+}
+#search-bars > div.ui-field-contain{
+  max-width: 340px;
+  padding: 6px;
+  display: block;
+  margin: 0 auto;
+}
+#search-bars > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 340px;
+  padding: 6px;
+}
+#search-bars a{
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*帮助*/
+
+#help-box{
+  max-width: 320px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 60px;
+}
+#help-box h4{
+
+}
+#help-box h5{
+  text-align: center;
+  color: #ff3333;
+}
+#help-box p{
+  text-indent: 2em;
+}
+#help-box img{
+  height: 24px;
+}
+
+/*分享*/
+#share-bars{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 320px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px){
+    #saylove-box{
+        max-width:95%;
+    }
+}
+#saylove-box fieldset{
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    /* box-shadow: 2px 3px 2px #d2d2d2; */
+    margin-bottom: 10px;
+    border: 1px;
+    border-color: #0ae;
+    border-style: dashed;
+}
+#saylove-box legend{
+  background: #0ae;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+}

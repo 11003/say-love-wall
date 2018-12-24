@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表白 - 共青科技告白墙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <link rel="stylesheet" href="__CSS__/homepage.css" media="screen" title="no title">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
+    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/nprogress@0.2.0/nprogress.css' rel='stylesheet' />
+</head>
+
+<body>
+<!--提交表白-->
+{include file="common/head"}
+<div class="main-body" id="saylove-box" data-role="content">
+
+    <fieldset class="animated fadeInDown">
+        <legend>你的信息</legend>
+        <!--<label for="nickName">你的昵称</label>-->
+        <input type="text" name="nickName" id="nickName" value="" placeholder="你的昵称...">
+        <!--<label for="trueName">你的真名</label>-->
+        <input type="text" name="trueName" id="trueName" value="" placeholder="你的真名...">
+        <p class="guess-hint">
+            注：真名保密不显示！可以参加紧张刺激的猜名字游戏！详细介绍请点击查看：<a style="color:#333;" href="help">帮助</a>
+        </p>
+        <select class="gender-Type" id="genderType" name="type">
+            <option value="male">我是男生</option>
+            <option value="female">我是女生</option>
+            <option value="secrecy">保密</option>
+        </select>
+    </fieldset>
+
+    <fieldset class="animated fadeInUp">
+        <legend>TA的信息</legend>
+        <label for="towho">TA的信息</label>
+        <input type="text" name="towho" id="towho" value="" placeholder="TA的名字...">
+        <select class="itsGender-Type" id="itsGenderType" name="type">
+            <option value="female">Ta是女生</option>
+            <option value="male">Ta是男生</option>
+            <option value="secrecy">保密</option>
+        </select>
+        <!--<label for="switch" style=" float: left; line-height: 45px; margin-bottom: 6px; "> 启用邮箱通知：</label>-->
+        <!--<input type="checkbox" data-role="flipswitch" name="switch" id="switch" onchange="openEmailNotice();" data-on-text="启用" data-off-text="关闭">-->
+        <!--<div id="email-box" style="display: none;clear: both;">-->
+            <!--<label for="email">TA的邮箱(选填)</label>-->
+            <!--<input type="text" name="email" id="email" value="" placeholder="直接填写,如814029073">-->
+            <!--<select class="email-Type" id="emailType" name="type">-->
+                <!--<option value="@qq.com">@qq.com</option>-->
+                <!--<option value="@163.com">@163.com</option>-->
+                <!--<option value="@hotmail.com">@hotmail.com</option>-->
+                <!--<option value="@yahoo.com">@yahoo.com</option>-->
+                <!--<option value="@gmail.com">@gmail.com</option>-->
+            <!--</select>-->
+            <!--<p class="guess-hint">注：邮箱保密不显示！系统可以代发一封提示邮件！查看：<a style="color:#333;" href="help">帮助</a></p>-->
+        <!--</div>-->
+    </fieldset>
+    <fieldset class="animated fadeInUp">
+        <legend>高级功能</legend>
+        <label for="switch" style=" float: left; line-height: 45px; margin-bottom: 6px;color: #666 "> 是否要用邮件通知TA一下？ </label>
+        <input type="checkbox" data-role="flipswitch" name="switch" id="switch" onchange="openEmailNotice();" data-on-text="启用" data-off-text="关闭">
+        <div id="email-box" style="display: none;clear: both;">
+            <label for="email">TA的邮箱(选填)</label>
+            <input type="text" name="email" id="email" value="" placeholder="直接填写,如814029073">
+            <select class="email-Type" id="emailType" name="type">
+                <option value="@qq.com">@qq.com</option>
+                <option value="@163.com">@163.com</option>
+                <option value="@hotmail.com">@hotmail.com</option>
+                <option value="@yahoo.com">@yahoo.com</option>
+                <option value="@gmail.com">@gmail.com</option>
+            </select>
+            <p class="guess-hint">注：邮箱保密不显示！系统可以代发一封提示邮件！查看：<a style="color:#333;" href="help">帮助</a></p>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>表白内容</legend>
+        <textarea name="contents" id="contents" placeholder="想对TA说些什么..." onkeyup="words_deal()"></textarea>
+        <a href="#" onclick="addImage()"  data-role="none">
+            <img src="__IMG__/upimage.png" width="50px" height="40px">
+        </a>
+        <input type="hidden" value="" name="loveimage" id="loveimg">
+        <input type="file" name="image" id="image" accept="image/png,image/jpg,image/jpeg" style="display: none;" data-role="none">
+        <a href="javascript:" data-rel="popup" id="submit" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="avascript:" aria-expanded="false">发布表白</a>
+        <!--图片名称-->
+        <div id="sm"></div>
+
+    </fieldset>
+
+    <p id="textCountBox">
+        剩余<span id="textCount">520</span>个字
+    </p>
+    <!--图片展示-->
+    <!--<label for="contents" style=" text-align: left; clear: both; ">表白的内容</label>-->
+    <!--<textarea name="contents" id="contents" onkeyup="words_deal()"></textarea>-->
+    <!--<p id="textCountBox">-->
+        <!--剩余<span id="textCount">520</span>个字-->
+    <!--</p>-->
+    <p id="Hint" style="background: none"></p>
+    <p id="shici" style="text-align: center;font-size: 12px;color:#666">小提示：</p>
+
+    <!--<a href="javascript:;" data-rel="popup" id="submit" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window" data-transition="pop">提交</a>-->
+    <div data-role="popup" id="hint_result" class="ui-content" data-overlay-theme="b">
+        <img src="__IMG__/icon/heart.gif" alt="" />
+    </div>
+
+
+    <div data-role="popup" class="ui-content" data-overlay-theme="b" id="app_status">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+        <h4>申请</h4>
+        <div class="ui-field-contain">
+            <label for="appeal-input">申请：</label>
+            <input type="search" name="appeal" id="appeal-input" placeholder="申请...">
+        </div>
+        <input id="appeal-submit" style="text-align:center;display:block;margin:0 auto;" type="button" data-inline="true" value="提交">
+        <span id="appeal-hint"></span>
+    </div>
+</div>
+
+<div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <div class="" data-role="navbar">
+        <ul>
+            <li><a href="/" data-ajax='false' data-transition="slide" data-direction="reverse" data-role="button" data-icon="article" class="ui-icon-article" data-iconpos="notext">首页</a></li>
+            <li><a href="/saylove" data-ajax='false' data-role="button" data-icon="heartNow" class="ui-icon-heart" data-iconpos="notext">表白</a></li>
+            <li><a href="/search" data-ajax='false' data-role="button" data-icon="search" class="ui-icon-search" data-iconpos="notext">搜索</a></li>
+            <li><a href="/help" data-ajax='false' data-role="button" data-icon="help" class="ui-icon-help" data-iconpos="notext">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="__JS__/submit.min.js" charset="utf-8"></script>
+<script src="__LAYER__/layer.js"></script>
+<script>
+    function addImage(){
+        $("#image").click();
+    }
+    $("#image").change(function(){
+        var str = $("#image").val();
+        // var str1 = $("#image")[0].files;
+        // console.log(str1);
+        var arr=str.split('\\');
+        var my=arr[arr.length-1]; //图片名字
+        $("#sm").text(my);
+        $("#loveimg").val(my);
+    });
+
+</script>
+</body>
+</html>
+<script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>

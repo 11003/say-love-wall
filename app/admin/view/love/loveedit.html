@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑文章</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="__CSS__/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__CSS__/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="__CSS__/animate.min.css" rel="stylesheet">
+    <link href="__CSS__/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="__JS__/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <link href="__JS__/layui/css/layui.css"rel="stylesheet">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-10">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>编辑告白</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="commentForm" method="post" action="{:url('love/loveedit')}">
+                        <input type="hidden" name="id" value="{$love['id']}"/>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">告白者姓名：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="title" type="text" class="form-control" readonly aria-required="true" value="{$love['nickName']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">告白者真名：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="trueName" type="text" class="form-control" readonly  aria-required="true" value="{$love['trueName']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">图片：</label>
+                            <div class="input-group col-sm-7">
+                               {if !empty($love.loveImage)}
+                                <img src="{$love.loveImage}" height="50px" width="50px" alt="">
+                                {else/}
+                                <input id="loveImage" type="text" class="form-control" readonly aria-required="true" value="无">
+
+                                {/if}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">状态：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="status" type="text" class="form-control" readonly aria-required="true" value="{eq name='$love.status' value='1'}启用{else/}禁用{/eq}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">告白者性别：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="gender" type="text" class="form-control" readonly aria-required="true" value="{eq name='$love.gender' value='male'}男{else/}女{/eq}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">IP：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="ip" type="text" class="form-control" readonly  aria-required="true" value="{$love['ip']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">To告白者：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="towho" type="text" class="form-control" readonly aria-required="true" value="{$love['towho']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">To告白者邮箱：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="email" type="text" class="form-control" readonly aria-required="true" value="{$love['email']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">To告白者性别：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="itsGender" type="text" class="form-control" readonly aria-required="true" value="{eq name='$love.itsGender' value='male'}男{else/}女{/eq}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">To告白时间：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="mtime" type="text" class="form-control" readonly aria-required="true" value="{$love.mtime|date='Y-m-d H:i:s',###}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">To告白赞数量：</label>
+                            <div class="input-group col-sm-7">
+                                <input id="love" type="text" class="form-control" readonly aria-required="true" value="{$love.love}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">告白内容：</label>
+                            <div class="input-group col-sm-7">
+                                <textarea class="form-control" rows="3" style="resize:vertical">{$love['contents']}</textarea>
+                                <!--<div id="editor">-->
+                                    <!--<p> </p>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-8">
+                                <!--<input type="button" value="提交" class="btn btn-primary" id="postform"/>-->
+                                <!--<button class="btn btn-primary" type="submit">确认提交</button>-->
+                                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="__JS__/jquery.min.js?v=2.1.4"></script>
+<script src="__JS__/bootstrap.min.js?v=3.3.6"></script>
+<script src="__JS__/content.min.js?v=1.0.0"></script>
+<script src="__JS__/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+<script src="__JS__/plugins/validate/jquery.validate.min.js"></script>
+<script src="__JS__/plugins/validate/messages_zh.min.js"></script>
+<script src="__JS__/layui/layui.js"></script>
+<script src="__JS__/jquery.form.js"></script>
+<script src="//unpkg.com/wangeditor/release/wangEditor.min.js"></script>
+<script src="__JS__/plugins/ueditor/ueditor.config.js"></script>
+<script src="__JS__/plugins/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+
+    var index = '';
+    function showStart(){
+        index = layer.load(0, {shade: false});
+        return true;
+    }
+
+    function showSuccess(res){
+
+        layer.ready(function(){
+            layer.close(index);
+            if(1 == res.code){
+                layer.alert(res.msg, {title: '友情提示', icon: 1, closeBtn: 0}, function(){
+                    window.location.href = res.data;
+                });
+            }else if(111 == res.code){
+                window.location.reload();
+            }else{
+                layer.msg(res.msg, {anim: 6});
+            }
+        });
+    }
+
+    $(document).ready(function(){
+        // 添加角色
+        var options = {
+            beforeSubmit:showStart,
+            success:showSuccess
+        };
+
+        $('#commentForm').submit(function(){
+            $(this).ajaxSubmit(options);
+            return false;
+        });
+
+        $('#keywords').tagsinput('add', 'some tag');
+        $(".bootstrap-tagsinput").addClass('col-sm-12').find('input').addClass('form-control')
+            .attr('placeholder', '输入后按enter');
+
+        // 上传图片
+        layui.use('upload', function(){
+            var upload = layui.upload;
+
+            //执行实例
+            var uploadInst = upload.render({
+                elem: '#test1' //绑定元素
+                ,url: "{:url('articles/uploadImg')}" //上传接口
+                ,done: function(res){
+                    //上传完毕回调
+                    $("#thumbnail").val(res.data.src);
+                    $("#sm").html('<img src="' + res.data.src + '" style="width:40px;height: 40px;"/>');
+                }
+                ,error: function(){
+                    //请求异常回调
+                }
+            });
+        });
+
+        // var editor = UE.getEditor('container');
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        // 或者 var editor = new E( document.getElementById('editor') )
+        editor.create();
+        editor.$textElem.attr('contenteditable', false)
+
+    });
+
+    // 表单验证
+    $.validator.setDefaults({
+        highlight: function(e) {
+            $(e).closest(".form-group").removeClass("has-success").addClass("has-error")
+        },
+        success: function(e) {
+            e.closest(".form-group").removeClass("has-error").addClass("has-success")
+        },
+        errorElement: "span",
+        errorPlacement: function(e, r) {
+            e.appendTo(r.is(":radio") || r.is(":checkbox") ? r.parent().parent().parent() : r.parent())
+        },
+        errorClass: "help-block m-b-none",
+        validClass: "help-block m-b-none"
+    });
+</script>
+</body>
+</html>

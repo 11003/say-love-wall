@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>共青科技职业学院告白墙</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="__CSS__/homepage.css" media="screen" title="no title">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
+    <link href='https://unpkg.com/nprogress@0.2.0/nprogress.css' rel='stylesheet' />
+    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+<body>
+<style>
+
+    .shi{text-align:center;color:#9e9e9e;font-size:12px;}
+    .text-color{
+        color: #fff;
+        text-shadow:none;
+    }
+    #myPanel{
+        background-color: #EAEAEA;
+        max-width: 7rem;
+        top:0rem;
+        opacity: 0.95;
+        border-top-right-radius: 5px;
+    }
+    .index-nav{
+        padding: 0;
+        overflow: hidden;
+        margin: 0 .25rem;
+        background-color: #EAEAEA;
+        box-sizing: border-box;
+        opacity: 0.95;
+        -webkit-box-sizing: border-box;
+        text-align: center;
+    }
+    .index-nav li img{
+        display: block;
+        margin: .25rem auto;
+        width: 1.85rem;
+        height: 1.85rem;
+        text-align: center;
+    }
+    .index-nav li span{
+        display: block;
+        font-size:.9rem;
+        text-align: center;
+    }
+    a:link{
+        text-decoration:none;
+        cursor: pointer;
+        outline: none;
+        color: #000000;
+        font-size:12px;
+    }
+
+</style>
+<span id="index"></span>
+<!-- 左侧拉栏 -->
+
+<div data-role="panel" id="myPanel" data-display="overlay" data-position-fixed="true">
+    <div class="ui-panel-inner">
+        <ul class="index-nav">
+            <li>选择排序方式</li>
+            {volist name="leftres" id="vo"}
+            <li>
+                <a href="#myPanel" id="{$vo.href_id}">
+                    <img src="{$vo.thumbnail}" alt="">
+                    <span style="color: #000;">{$vo.title}</span>
+                </a>
+            </li>
+            {/volist}
+
+
+        </ul>
+    </div>
+
+</div>
+<style>
+    #goToTop{
+        width: 3rem;
+        height: 3rem;
+        display: block;
+        position: fixed;
+        bottom: 6rem;
+        right: 1%;
+        text-align: center;
+    }
+</style>
+{include file='common/head'}
+<!-- 网站主体 -->
+<div id="pages" data-role="footer" style="text-align:center;" page="1" mode="1" max="0">
+    <div data-role="controlgroup" data-type="horizontal">
+        <p>Welcome to 2019!~  :)</p>
+        <!--<a href="#" id="previous" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-l ui-btn-icon-notext">上一页</a>-->
+        <!--<a href="#myPanel" id="" class="ui-btn ui-corner-all ui-shadow ui-icon-bars ui-btn-icon-notext">工具</a>-->
+        <!--<a href="#" id="returnTop" class="ui-btn  ui-corner-all ui-icon-carat-u ui-shadow ui-btn-icon-notext">返回顶部</a>-->
+        <!--<a href="#" id="next1" class="ui-btn ui-corner-all ui-shadow ui-icon-arrow-r ui-btn-icon-notext">下一页</a>-->
+    </div>
+</div>
+<style>
+    .header-nav{
+        background: #fff;
+        padding:12px;
+        box-shadow:2px 4px 6px #eee;
+    }
+    .header-nav li,a{
+        list-style: none;
+        text-decoration: none;
+    }
+    .header-nav-top{
+        margin: 0 auto;
+    }
+ 	.header-nav-ul{
+      text-align: center;
+  }
+
+    .header-nav-bottom p span{
+        display: block;
+        font-size: .55rem;
+        text-align: center;
+    }
+    .header-nav-ul li{
+        display: inline-block;
+    }
+    .header-nav-ul li a img{
+        display: block;
+        width: 1.85rem;
+        height: 1.85rem;
+        margin: .25rem .7rem;
+    }
+    .header-nav-ul li a span{
+        display: block;
+        font-size: .8rem;
+        text-align: center;
+    }
+</style>
+
+<div class="header-nav">
+    <div class="header-nav-top">
+        <div class="header-nav-ul">
+            {volist name="res" id="vo"}
+            <li>
+                <a href="{$vo.href}" data-ajax='false'>
+                    <img src="{$vo.thumbnail}" alt="">
+                    <span style="color:{$vo.color}">{$vo.title}</span>
+                </a>
+            </li>
+
+            {/volist}
+        </div>
+    </div>
+    <div class="header-nav-bottom">
+        <p id="previous" style="text-align: center;">
+            <a href="#" style="text-align: center;display: block;padding-top:10px;">
+                <img src="__IMG__/ali/up.png" alt="" style="width:1rem;height: 1rem;">
+            </a>
+            <span>上一页</span>
+        </p>
+        <p id="pageNum" style="text-align:center;color:#9e9e9e;font-size:12px;padding-top:1rem">
+
+        </p>
+    </div>
+</div>
+
+<div class="main-body" id="main" data-role="content" style="overflow-y:auto; overflow-x:hidden;">
+    <!-- 这里是表白的心跳载入logo，当表白获取成功就会覆盖这里 -->
+    <img src="https://upload-images.jianshu.io/upload_images/12353119-507f4869b8e18d7f.gif?imageMogr2/auto-orient/strip" alt="" class="loading"/>
+</div>
+<div id="goToTop">
+    <img src="{$goToTop.thumbnail}" alt="" width="100%" height="100%">
+    <span>Top</span>
+</div>
+<div data-role="popup" id="myPopup" class="ui-content" data-overlay-theme="b">
+
+</div>
+
+
+<!--<p style="text-align:center;color:#9e9e9e;font-size:12px;">-->
+<!--蓝色下划线：男生 / 红色下划线：女生 / 黑色下划线：保密-->
+<!--</p>-->
+
+
+<style>
+
+    footer .footer-nav-bottom p a{
+        font-size: .65rem;
+        padding: 0 .25rem;
+        line-height: 1.3rem;
+    }
+    footer .footer-nav-bottom p a.red{
+        color:#fe435d;
+    }
+    .footer-nav-top p span{
+        display: block;
+        font-size: .55rem;
+        text-align: center;
+    }
+</style>
+<footer class="footer">
+    <nav class="footer-nav footer-nav-top" style="padding:2rem 1rem 0 1rem;margin-bottom: 1rem">
+        <p id="next"  style="text-align: center;">
+            <a href="#" style="text-align: center;display: block;padding-top:10px;border-top:1px dotted #000">
+                <img src="__IMG__/ali/down.png" alt="" style="width:1rem;height: 1rem;">
+            </a>
+            <span>下一页</span>
+        </p>
+    </nav>
+    <nav class="footer-nav footer-nav-bottom" style="margin-bottom: 3rem">
+        <p style="text-align: center;">
+            <a href="/" class="red ui-link">首页</a>
+            <a href="/saylove" class="ui-link"  style="color:#0E6EB8">表白</a>
+        </p>
+    </nav>
+</footer>
+
+<!--<div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">-->
+<!--<div class="" data-role="navbar">-->
+<!--<ul>-->
+<!--<li><a href="/" data-ajax='false' data-role="button" data-icon="articleNow" class="ui-icon-article" data-iconpos="notext">首页</a></li>-->
+<!--<li><a href="/saylove" data-ajax='false' data-transition="slide" data-role="button" data-icon="heart" class="ui-icon-heart" data-iconpos="notext">表白</a></li>-->
+<!--<li><a href="/search" data-ajax='false' data-role="button" data-icon="search" class="ui-icon-search" data-iconpos="notext">搜索</a></li>-->
+<!--<li><a href="/help" data-ajax='false' data-role="button" data-icon="help" class="ui-icon-help" data-iconpos="notext">帮助</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<div data-role="popup" class="ui-content" data-overlay-theme="b" id="guess-Name-Popup">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+    <h4>猜名字</h4>
+    <p>
+        已猜中 <span id="guess_right"></span> 次, 被猜 <span id="guess_all"></span> 次.
+    </p>
+    <p class="guess-hint">
+        猜名字游戏介绍请点击查看：<a style="color:#333;" href="/help">帮助</a>
+    </p>
+    <div class="ui-field-contain">
+        <label for="guess-input">猜一猜发起者的名字：</label>
+        <input type="search" name="search" id="guess-input" placeholder="名字">
+    </div>
+    <input id="guess-submit" style="text-align:center;display:block;margin:0 auto;" type="submit" data-inline="true" value="猜！">
+    <span id="guess-hint"></span>
+</div>
+
+<div data-role="popup" class="ui-content" data-overlay-theme="b" id="comment-Popup"  style="overflow-x:hidden;height:100%;max-height: 30rem;" >
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right" style="position: fixed;">关闭</a>
+    <h4>评论列表</h4>
+    <div class="" id="comment-lists">
+        <ul id="comment-lists-ul">
+
+        </ul>
+    </div>
+    <div class="ui-field-contain">
+        <label for="guess-input">评论：</label>
+        <input type="search" name="search" id="contents-input" placeholder="理性发言,文明你我他...">
+    </div>
+    <input id="comment-submit" style="text-align:center;display:block;margin:0 auto;" type="submit" data-inline="true" value="评论">
+    <span id="comment-hint"></span>
+    <p style="text-align:center;color:#9e9e9e;font-size:12px;">小提示：点击评论框外面也可以关闭评论哦。</p>
+</div>
+
+
+<div data-role="popup" class="ui-content" data-overlay-theme="b" id="share-Popup">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+    <h4>链接分享</h4>
+    <h5>复制链接给朋友或者点击打开链接</h5>
+    <div id="link">
+
+    </div>
+</div>
+
+<div class="" style="display:none;">
+    <!--<script src="https://s11.cnzz.com/z_stat.php?id=1260775797&web_id=1260775797" language="JavaScript"></script>-->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+<!--图片灯箱-->
+<!--<link rel="stylesheet" type="text/css" href="https://love.baoguo.fun/plugins/fancybox/jquery.fancybox.min.css" />-->
+<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
+<!--<script src="https://love.baoguo.fun/plugins/fancybox/jquery.fancybox.min.js"></script>-->
+<script src="__JS__/display.min.js" charset="utf-8"></script>
+<script src="__LAYER__/layer.js"></script>
+<!--<script src="__JS__/layer_mobile/layer.js"></script>-->
+<!-- 这里是下雪的插件，取消注释自动调用 -->
+<!--<script type="text/javascript" src="__JS__/snow.min.js"></script>-->
+<?php
+$h=date('G');
+if ($h<11);
+else if ($h<13);
+else if ($h<17);
+else echo '<script type="text/javascript" src="__JS__/snow.src.js"></script>';
+
+    ?>
+
+
+<script>
+
+  
+  $(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script>
+</body>
+</html>
+<script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
