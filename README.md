@@ -1,7 +1,7 @@
 
 # 由Thinkphp5框架开发的告白墙
 
-## 圣诞主题
+## 圣诞主题（后台可变更）
 
 ### 前台页面
 
@@ -33,6 +33,8 @@ Thinks感谢！详细跳转[广西科技大学平兄](http://pingxonline.com/)
 > back/love.sql
 
 ---
+
+注：请把`love`字段从`varchar`改为`int`，避免出现`点赞排序不准`的bug
 
 地址：[http://love.liuhaier.xyz](http://love.liuhaier.xyz)
 
