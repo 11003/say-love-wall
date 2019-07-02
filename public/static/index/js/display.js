@@ -42,7 +42,7 @@ $(document).ready(function() {
         $(this).removeClass("shi");
         // 如果当前页数不为 1
         if (page - 1 > 0) {
-            // $("<img>").attr('src', 'https://upload-images.jianshu.io/upload_images/12353119-507f4869b8e18d7f.gif?imageMogr2/auto-orient/strip').addClass('loading').appendTo('#main');
+            // $("<img>").attr('src', 'https://i.loli.net/2019/07/01/5d1a2cdfed99427567.gif').addClass('loading').appendTo('#main');
             getPage(page - 1, mode);
             $("#pages").attr('page', page - 1);
             // $('body,html').animate({scrollTop:200},500);
@@ -64,7 +64,7 @@ $(document).ready(function() {
             // layer.msg('啊哦，后面没有了~',{time:1500,icon:5,shade: [0.5,'black']});
         } else {
 
-            // $("<img>").attr('src', 'https://upload-images.jianshu.io/upload_images/12353119-507f4869b8e18d7f.gif?imageMogr2/auto-orient/strip').addClass('loading').appendTo('#main');
+            // $("<img>").attr('src', 'https://i.loli.net/2019/07/01/5d1a2cdfed99427567.gif').addClass('loading').appendTo('#main');
             getPage(page + 1, mode);
             $("#pages").attr('page', page + 1);
             gotoLocation();
@@ -453,7 +453,7 @@ function output(result,total,total_pages) {
 
         $("<div>").addClass('post animated fadeIn').addClass('post-'+id).appendTo('#main');
         $("<div>").addClass('post-title').addClass('post-title-'+id).appendTo('.post-'+id);
-        $("<ul>").html('<li class="'+gender+'">'+nickName+'</li><li><img src="https://upload-images.jianshu.io/upload_images/12353119-4fd3242e851fb388.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></li><li class="'+itsGender+'">'+toWho+'</li>').appendTo('.post-title-'+id);
+        $("<ul>").html('<li class="'+gender+'">'+nickName+'</li><li><img src="https://i.loli.net/2019/07/01/5d1a2c018d3b655920.png" alt="" /></li><li class="'+itsGender+'">'+toWho+'</li>').appendTo('.post-title-'+id);
         $("<div>").addClass('post-body').addClass('post-body-'+id).appendTo('.post-'+id);
         $("<pre>").addClass('pre-'+id).appendTo('.post-body-'+id);
         $("<div>").addClass('post-body-content').text(contents).appendTo('.pre-'+id);

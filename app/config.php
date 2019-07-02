@@ -39,7 +39,7 @@ return [
         // 缓存有效期 0表示永久缓存
         'expire' => 0,
     ],
-	'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'error.tpl',
+//	'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'error.tpl',
     //加密串
     'salt' => 'wZPb~yxvA!ir38&Z',
     //备份数据地址

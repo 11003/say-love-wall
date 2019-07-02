@@ -10,7 +10,9 @@ class Base extends Controller
     public function __construct()
     {
         parent::__construct();
-
+        $seoImg = db('config')->where('id','13')->find();
+              cache('seoImg',$seoImg);
+              $this->assign('seoImg',$seoImg);
 
         if(empty($ip)){
             Cache::clear();  // 新用户清除缓存

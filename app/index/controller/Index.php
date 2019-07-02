@@ -14,12 +14,15 @@ class Index extends Base
         $res = $db->where('id','in','1,2,3,4')->select();
         $leftRes = $db->where('id','in','6,7,8,9,10')->select();
         $goToTop = $db->where('id','11')->find();
+   
         cache('res',$res);
         cache('leftres',$leftRes);
         cache('goToTop',$goToTop);
+
         $this->assign('res',$res);
         $this->assign('leftres',$leftRes);
         $this->assign('goToTop',$goToTop);
+
         return view();
     }
 

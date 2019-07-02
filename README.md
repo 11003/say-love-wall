@@ -30,11 +30,19 @@ Thinks感谢！详细跳转[广西科技大学平兄](http://pingxonline.com/)
 
 ## 数据库文件
 
-> back/love.sql
+> back/love_liuhai.sql
 
 ---
 
-注：请把`love`字段从`varchar`改为`int`，避免出现`点赞排序不准`的bug
+地址：
 
-地址：[http://love.liuhaier.xyz](http://love.liuhaier.xyz)
+- 前台
+[http://liuhai.fun.:8080](http://liuhai.fun.:8080)
+
+- 后台
+
+账号：admin
+密码：admin
+
+[http://127.0.0.1/admin](http://127.0.0.1/admin)
 

@@ -124,7 +124,7 @@ $(document).ready(function() {
                     //     },
                     // 2300);
                 }
-                $("#submit").text('提交').remove('disabled');
+                $("#submit").text('发布表白').remove('disabled');
                 $("#Hint").html(result.msg);
 
                 // console.log(result);
@@ -152,7 +152,7 @@ $(document).ready(function() {
                         $("#appeal-input").val('');
                         $("#appeal-hint").html(result.msg);
                     }
-                    $("#appeal-submit").text('提交').remove('disabled');
+                    $("#appeal-submit").text('发布表白').remove('disabled');
                     $("#appeal-hint").html(result.msg);
 
                     // console.log(result);

@@ -27,7 +27,7 @@ class Config extends Base
             $selectResult = $article->getConfigsByWhere($where, $offset, $limit);
 
             foreach($selectResult as $key=>$vo){
-                $selectResult[$key]['thumbnail'] = '<img src="' . $vo['thumbnail'] . '" width="50px" height="50px">';
+                $selectResult[$key]['thumbnail'] = '<a target="_blank" href="'. $vo['thumbnail'] .'"><img src="' . $vo['thumbnail'] . '" width="50px" height="50px"></a>';
                 $selectResult[$key]['color'] = '<div style="background: '. $vo['color'] .' ;color:#FFF;padding:5px" >'. $vo['color'] .'</div>';
                 $selectResult[$key]['operate'] = showOperate($this->makeButton($vo['id']));
             }

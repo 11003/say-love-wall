@@ -19,6 +19,12 @@ class SayloveModel extends Model
     protected $table = 'gk_posts';
 
     public $maxItems = 18;  // 一页18个,未使用
+
+    // 定义全局的查询范围
+    protected function base($query)
+    {
+        $query->where('status',1);
+    }
     /**
      * @param $where [条件]
      * @param $page [每页显示的记录数] 1页
@@ -27,13 +33,12 @@ class SayloveModel extends Model
      */
     public function getLovesByWhere($where,$page,$mode)
     {
-        $where['status'] = 1;
 
         $limit = intval(config('max_page')); // 一页18个
         $page_later = ($page-1)*$limit;
         switch ($mode){
             case '0'://点赞最多的
-                $result =  $this->where($where)->limit($page_later,$limit)->order('love DESC')->select();
+                $result =  $this->where($where)->limit($page_later,$limit)->order('love','DESC')->select();
                 return $this->output($result);
                 break;
             case '1'://按时间倒序显示(最新)
@@ -82,6 +87,9 @@ class SayloveModel extends Model
             $is_like = $like->isLike($ip,$v['id']);
 
             $v['comment_count'] = $comment_count;
+            $v['trueName'] = '-';
+            $v['love'] = intval($v['love']);
+            $v['ip'] = '-';
             $v['guess_yes'] = $guess_yes;
             $v['guess_count'] = $guess_count;
             $v['is_like'] = $is_like;
@@ -89,7 +97,15 @@ class SayloveModel extends Model
             $arr[]=$v;
         }
 //        $res = array_push($arr,$page);
-        Cache::set('arr',$arr,4800);  // 设置1个小时过期的缓存
+//        Cache::set('arr',$arr,4800);  // 设置1个小时过期的缓存
+//        $arr = Cache::get('arr');
+//        $options = ['type'=>'Redis'];
+//        $redis = Cache::connect($options);
+//        $c = $redis->set('arr',$arr);
+//        if(!$c){
+//            $redis->set('arr',$arr);
+//        }
+//        $arr = $redis->get('arr');
         return $arr;
 
 
