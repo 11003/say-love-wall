@@ -124,7 +124,7 @@ $(document).ready(function() {
                     //     },
                     // 2300);
                 }
-                $("#submit").text('发布表白').remove('disabled');
+                $("#submit").text('提交').remove('disabled');
                 $("#Hint").html(result.msg);
 
                 // console.log(result);
