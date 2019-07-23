@@ -26,13 +26,13 @@ return [
         // SMTP 用户名，如果是QQ邮箱申请的则填写QQ邮箱
         'username' => '814029073@qq.com',
         // SMTP 密码，如果是QQ邮箱申请的则填写开通SMTP服务后生成的密码
-        'password' => 'jhjvjtavfkytbbfh',
+        'password' => 'xxxxxxxxxxxxxx',
         // SMTP 邮箱地址，如果是QQ邮箱申请的则填写QQ邮箱
         'address'=> '814029073@qq.com',
         // 分享地址，填写到能够访问该表白墙 share.php 文件的地址
         'link' => 'http://liuhai.fun./share',
         // 邮件标题
-        "title" => "你被表白啦！来自共青科技表白墙",
+        "title" => "你被表白啦！来自xxx表白墙",
         // 邮件内容，{{link}} 为表白链接的占位符，可随意更改位置，系统自动替换为表白链接。
         "body" => "悄悄的告诉你哦~刚刚有人向你表白了，TA还称呼你...",
         // 邮件发送成功返回
