@@ -25,9 +25,9 @@
 
 ### 后台功能
 
-- 用户拉黑
-- 告白列表管理
-- 主题配置
+- 用户拉黑(gk_blacklist)
+- 告白列表管理(gk_posts)
+- 主题配置(gk_config)
 
 ![](https://upload-images.jianshu.io/upload_images/12353119-73e15f5d90d24e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/12353119-a6f8196e5ea06041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -52,7 +52,7 @@
 
 解决方法：`app -> index -> config.php` 下面
 
-[![I76N`X]$)278BM}FX4Z%M)R.png](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)
+![](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)
 
 ### 主要数据表解释
 
