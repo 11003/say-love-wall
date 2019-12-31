@@ -8,7 +8,9 @@
 **首页**
 
 ![](https://upload-images.jianshu.io/upload_images/12353119-4654ce948e763ffd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](https://upload-images.jianshu.io/upload_images/12353119-a3f054c1cec8096d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](https://upload-images.jianshu.io/upload_images/12353119-04067943ba661fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **提交页**
@@ -30,6 +32,7 @@
 - 主题配置(gk_config)
 
 ![](https://upload-images.jianshu.io/upload_images/12353119-73e15f5d90d24e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](https://upload-images.jianshu.io/upload_images/12353119-a6f8196e5ea06041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -73,17 +76,21 @@
 
 ## 地址：
 
-- 在线测试 前台(后面有个“.”点哦)
+- 在线测试 前台
 
 [http://love.liuhai.fun./](http://love.liuhai.fun./)
 
 - 后台
 
+（在线）
+账号：test
+密码：test
+[http://love.liuhai.fun/admin](表白墙后台)
+
+（sql文件）
 账号：admin
 密码：admin
-
-[http://127.0.0.1/admin](http://127.0.0.1/admin)
-
+[http://localhost/admin](http://localhost/admin)
 
 # 最后
 
