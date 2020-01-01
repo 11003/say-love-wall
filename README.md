@@ -60,7 +60,7 @@
 
 # 数据库文件
 
-(back/love_liuhai.sql)[https://github.com/Haiwar/say-love-wall/tree/master/back]
+[back/love_liuhai.sql](https://github.com/Haiwar/say-love-wall/tree/master/back)
 
 
 ## 地址：
