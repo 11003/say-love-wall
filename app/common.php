@@ -41,3 +41,13 @@ function transfer_time($time)
     }
     return $str;
 }
+function getAddressByIp($ip = ''){
+    if(empty($ip)){
+        return '请输入IP地址';
+    }
+    $url="http://restapi.amap.com/v3/ip?key=4a218d0d82c3a74acf019b701e8c0ccc&ip=".$ip;
+    $ipinfo=json_decode(file_get_contents($url));
+    $location = $ipinfo->{'city'};
+    $s = $location?$location:"本地或未知";
+    return $s;
+}

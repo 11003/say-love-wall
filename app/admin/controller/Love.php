@@ -47,6 +47,7 @@ class Love extends Base
                 $selectResult[$key]['itsGender'] =$v['itsGender']; // 被告白者性别
                 $selectResult[$key]['created_at'] = date('Y-m-d H:i',$v['mtime']);
                 $selectResult[$key]['status'] = $status[$v['status']];
+                $selectResult[$key]['ip'] = $v['ip'] . '=>' .getAddressByIp($v['ip']);
 //                $selectResult[$key]['contents'] = subtext($v['contents'],30);
 
                 $selectResult[$key]['operate'] = showOperate($this->makeButton($v['id']));
