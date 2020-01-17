@@ -43,7 +43,7 @@ class ConfigModel extends Model
 
     public function getAllConfigs($where)
     {
-        return $this->where($where)->count();
+        return $this->where($where)->where('is_del=1')->count();
     }
 
     public function getOneConfig($id)
