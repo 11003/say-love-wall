@@ -46,5 +46,5 @@ return [
     // 一页展示多少告白
     'max_page'  => 10,
     // 运行用户一天发送几次(不能为1或者0)
-    'limit_push' => 1
+    'limit_push' => 5
 ];
