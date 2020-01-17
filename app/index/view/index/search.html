@@ -10,7 +10,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
     <link href='https://unpkg.com/nprogress@0.2.0/nprogress.css' rel='stylesheet' />
 </head>
-
+<style>
+    .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear{
+        top: 15%;
+    }
+</style>
 <body>
 {include file="common/head"}
 <div class="main-body" id="search-bars" data-role="content">
@@ -52,7 +56,6 @@
     <input id="guess-submit" style="text-align:center;display:block;margin:0 auto;" type="submit" data-inline="true" value="猜！">
     <span id="guess-hint"></span>
 </div>
-
 <div data-role="popup" class="ui-content" data-overlay-theme="b" id="comment-Popup" style="overflow-x:hidden;height:100%;max-height: 30rem;" >
     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right" style="position: absolute;top:0.3rem;right: 0.3rem;">关闭</a>
     <h4>评论列表</h4>
@@ -83,7 +86,6 @@
         <a href=""></a>
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
 <link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
@@ -92,8 +94,7 @@
 <script src="__JS__/display.min.js" charset="utf-8"></script>
 <script src="__LAYER__/layer.js"></script>
 <!--<script src="__JS__/layer_mobile/layer.js"></script>-->
-<!-- 这里是下雪的插件，取消注释自动调用 -->
-<!--<script type="text/javascript" src="__JS__/snow.src.js"></script>-->
+{include file='common/script'}
 
 <script>
 

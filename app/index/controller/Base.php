@@ -2,7 +2,6 @@
 namespace app\index\controller;
 
 use think\Controller;
-use think\Request;
 use think\Session;
 use think\Cache;
 class Base extends Controller
@@ -11,13 +10,17 @@ class Base extends Controller
     {
         parent::__construct();
         $where['is_del'] = ['neq','2'];
-        $seoImg = db('config')->where($where)->where('id','13')->find();
-        $seoImg2 = db('config')->where($where)->where('id','14')->find();
-              cache('seoImg',$seoImg);
-              cache('seoImg2',$seoImg2);
+        $db = db('config');
+        $seoImg = $db->where($where)->where('id','13')->find();
+        $seoImg2 = $db->where($where)->where('id','14')->find();
+        $seoFootImg = $db->where($where)->where('id','18')->find();
+              cache('seoImg',$seoImg);//Logo1
+              cache('seoImg2',$seoImg2);//Logo2
+              cache('seoFootImg',$seoFootImg);//FootLogo
               $this->assign([
                   'seoImg' => $seoImg,
-                  'seoImg2' => $seoImg2
+                  'seoImg2' => $seoImg2,
+                  'seoFootImg' => $seoFootImg
               ]);
 
         if(empty($ip)){

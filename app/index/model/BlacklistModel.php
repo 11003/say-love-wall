@@ -28,7 +28,7 @@ class BlacklistModel extends Model
 
             $today=$this->getOneBlackUser($param);
             if($today['appeal_time']){
-                return msg(-1, '', '你已经申诉过了。如有问题请加QQ：814029073~');
+                return msg(-1, '', '你已经申诉过了。如有问题请加QQ：'. config('qq') .'~');
             }
             $param['appeal_time']=time();
             $result =  $this->validate(['content'=>'require|max:150'],['content.max'=>'最多150字符','content.require'=>'申诉内容不能为空~'])->save($param,['id' => $param['id']]);
@@ -38,7 +38,7 @@ class BlacklistModel extends Model
                 return msg(-1, '', $this->getError());
             }else{
 
-                return msg(1, '', '发送成功，处理时间为期三天。如有问题请加QQ：814029073~');
+                return msg(1, '', '发送成功，处理时间为期三天。如有问题请加QQ：'. config('qq') .'~');
             }
         }catch(PDOException $e){
             return msg(-2, '', $e->getMessage());
