@@ -188,12 +188,9 @@ class SayloveModel extends Model
      * @return int
      * 设置一天告白次数
      */
-    public function setPushCount($number,$uip)
+    public function setPushCount($uip)
     {
-        $count = $this->where('ip',$uip)->whereTime('mtime','d')->count();
-        if($count >= $number){
-            return 2;
-        }
+        return $this->where('ip',$uip)->whereTime('mtime','d')->count('id');
     }
 
 
@@ -303,7 +300,7 @@ class SayloveModel extends Model
      */
     public function rendomSum($limit)
     {
-       
+
         $count=$this->getAllLoves();
         $total_page = floor($count/$this->maxItems);
         $page_later = rand(1,$total_page)*$limit;

@@ -41,8 +41,8 @@ class Saylove extends Base
             if($limit_push <= 1) {
                 $limit_push = 3;
             }
-            $ip_number = $saymodel->setPushCount($limit_push,$uip);
-            if(isset($ip_number) && $ip_number == ($limit_push - 1)){
+            $ip_send_number = (int)$saymodel->setPushCount($uip);
+            if($ip_send_number >= $limit_push){
                 return json(msg(-1,'','很遗憾,今天你告白的次数超过了'. $limit_push .'次,明天再来吧~'));
             }
 
