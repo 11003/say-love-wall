@@ -11,8 +11,13 @@ class Base extends Controller
     {
         parent::__construct();
         $seoImg = db('config')->where('id','13')->find();
+        $seoImg2 = db('config')->where('id','14')->find();
               cache('seoImg',$seoImg);
-              $this->assign('seoImg',$seoImg);
+              cache('seoImg2',$seoImg2);
+              $this->assign([
+                  'seoImg' => $seoImg,
+                  'seoImg2' => $seoImg2
+              ]);
 
         if(empty($ip)){
             Cache::clear();  // 新用户清除缓存

@@ -19,7 +19,7 @@ html, body{
   display: block;
   margin: 0 auto;
   text-align: center;
-  max-width: 90rem;
+  max-width: 400px;
 }
 .ui-icon-article:after {
     /*background-color: #fff;*/
@@ -266,7 +266,8 @@ html body .action .ui-btn-active{
     }
 }
 .post{
-    max-width:87%;
+    /*max-width:87%;*/
+    max-width: 320px;
     background: #fff;
     padding: 10px;
     /*max-height:380px;*/

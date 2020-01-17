@@ -37,9 +37,13 @@ class Saylove extends Base
                 return json(msg($ip_find['code'], $ip_find['data'], $ip_find['msg']));
             }
             // 每个ip一天只能发3次
-            $ip_number = $saymodel->setPushCount(3,$uip);
-            if(isset($ip_number) && $ip_number == 2){
-                return json(msg(-1,'','很遗憾,今天你告白的次数超过了三次,明天再来吧~'));
+            $limit_push = (int)config('limit_push');
+            if($limit_push <= 1) {
+                $limit_push = 3;
+            }
+            $ip_number = $saymodel->setPushCount($limit_push,$uip);
+            if(isset($ip_number) && $ip_number == ($limit_push - 1)){
+                return json(msg(-1,'','很遗憾,今天你告白的次数超过了'. $limit_push .'次,明天再来吧~'));
             }
 
             $flag = $saymodel->insertSay($data);
