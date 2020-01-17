@@ -1,2 +1,6 @@
 <!-- 这里是下雪的插件，取消注释自动调用 -->
-<script type="text/javascript" src="__JS__/snow.min.js"></script>
+<?php
+$h = date('H');
+if ($h >= 18 || $h < 6)
+echo '<script type="text/javascript" src="__JS__/snow.min.js"></script>';
+?>
