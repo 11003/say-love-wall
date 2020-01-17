@@ -39,7 +39,7 @@ class Config extends Base
         }
         return $this->fetch();
     }
-    public function configAdd()
+    public function configadd()
     {
         if(request()->isPost()){
             $param = input('post.');
@@ -52,7 +52,7 @@ class Config extends Base
         }
         return $this->fetch();
     }
-    public function configEdit()
+    public function configedit()
     {
         $config = new ConfigModel();
 
