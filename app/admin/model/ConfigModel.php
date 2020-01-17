@@ -38,7 +38,7 @@ class ConfigModel extends Model
 
     public function getConfigsByWhere($where, $offset, $limit)
     {
-        return $this->where($where)->limit($offset, $limit)->order('id desc')->select();
+        return $this->where($where)->where('is_del=1')->limit($offset, $limit)->order('id desc')->select();
     }
 
     public function getAllConfigs($where)
@@ -70,7 +70,7 @@ class ConfigModel extends Model
     public function delConfig($id)
     {
         try{
-            $this->where('id', $id)->delete();
+            $this->where('id', $id)->update(['is_del' => 2]);
             return msg(1, '', '删除配置成功');
 
         }catch( PDOException $e){

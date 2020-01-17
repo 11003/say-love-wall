@@ -10,8 +10,9 @@ class Base extends Controller
     public function __construct()
     {
         parent::__construct();
-        $seoImg = db('config')->where('id','13')->find();
-        $seoImg2 = db('config')->where('id','14')->find();
+        $where['is_del'] = ['neq','2'];
+        $seoImg = db('config')->where($where)->where('id','13')->find();
+        $seoImg2 = db('config')->where($where)->where('id','14')->find();
               cache('seoImg',$seoImg);
               cache('seoImg2',$seoImg2);
               $this->assign([
