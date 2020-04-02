@@ -20,6 +20,7 @@ html, body{
   margin: 0 auto;
   text-align: center;
   max-width: 400px;
+    max-height: 400px;
 }
 .ui-icon-article:after {
     /*background-color: #fff;*/
@@ -252,6 +253,11 @@ overflow-x: hidden;
   margin-top: 10px;
   clear: both;
   text-indent: 2em;
+    text-shadow: none;
+    font-weight: bold;
+    /*color: transparent;*/
+    /*background-image: linear-gradient(to right, rgb(255,0,0), rgb(255,128,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255),  rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));*/
+    /*-webkit-background-clip: text;*/
 }
 html body .action .ui-btn-active{
   color: #000;
@@ -302,18 +308,31 @@ html body .action .ui-btn-active{
 .post-body{
 
 }
-.post-body .post-body-content{
+.post-body .post-body-content p{
   word-wrap: break-word;
   text-indent: 2em;
   padding: 10px;
-  padding-bottom: 0px;
-  /*color: #FF9800;*/
-  color: #333;
+  padding-bottom: 0;
+  /*color: #333;*/
   text-align: left;
+  text-shadow: none;
+  font-weight: bold;
+  /*color: transparent;*/
+  /*animation: hue 5s linear infinite;*/
+  /*background-image: linear-gradient(to right, rgb(255,0,0), rgb(255,128,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255),  rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));*/
+/*-webkit-background-clip: text;*/
 }
 .post-actions{
 
 }
+/*@keyframes hue {*/
+/*    from {*/
+/*        filter: hue-rotate(0);*/
+/*    }*/
+/*    to {*/
+/*        filter: hue-rotate(-360deg);*/
+/*    }*/
+/*}*/
 .post-body-time{
   text-align: right;
   text-indent: 0em;

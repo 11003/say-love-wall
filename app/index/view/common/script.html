@@ -1,6 +1,7 @@
 <!-- 这里是下雪的插件，取消注释自动调用 -->
 <?php
-$h = date('H');
-if ($h >= 18 || $h < 6)
-echo '<script type="text/javascript" src="__JS__/snow.min.js"></script>';
+$hours = date('G');
+if ($hours >= 0 && $hours <= 10 || $hours > 18 && $hours <= 24) {
+    echo '<script type="text/javascript" src="__JS__/snow.min.js"></script>';
+}
 ?>

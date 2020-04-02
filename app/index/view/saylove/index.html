@@ -15,6 +15,25 @@
 </head>
 
 <body>
+		<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+        <style>
+            .w-e-text-container .w-e-panel-container .w-e-emoticon-container .w-e-item {
+                padding: 0;
+            }
+        </style>
 <!--提交表白-->
 {include file="common/head"}
 <div class="main-body" id="saylove-box" data-role="content">
@@ -78,7 +97,9 @@
     </fieldset>
     <fieldset>
         <legend>表白内容</legend>
-        <textarea name="contents" id="contents" placeholder="想对TA说些什么..." onkeyup="words_deal()"></textarea>
+        <div id="editor" style="margin-bottom: 20px;" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow"></div>
+        <textarea  name="contents" id="contents" style="display: none" ></textarea>
+        <!--<textarea name="contents" id="contents" class="example1" placeholder="想对TA说些什么..." onkeyup="words_deal()"></textarea>-->
         <a href="#" onclick="addImage()"  data-role="none">
             <img src="__IMG__/upimage.png" width="50px" height="40px">
         </a>
@@ -90,9 +111,9 @@
 
     </fieldset>
 
-    <p id="textCountBox">
-        剩余<span id="textCount">520</span>个字
-    </p>
+    <!--<p id="textCountBox">-->
+        <!--剩余<span id="textCount">520</span>个字-->
+    <!--</p>-->
     <!--图片展示-->
     <!--<label for="contents" style=" text-align: left; clear: both; ">表白的内容</label>-->
     <!--<textarea name="contents" id="contents" onkeyup="words_deal()"></textarea>-->
@@ -120,7 +141,7 @@
     </div>
 </div>
 
-<div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+<div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="z-index: 999999;">
     <div class="" data-role="navbar">
         <ul>
             <li><a href="/" data-ajax='false' data-transition="slide" data-direction="reverse" data-role="button" data-icon="article" class="ui-icon-article" data-iconpos="notext">首页</a></li>
@@ -132,21 +153,62 @@
 </div>
 
 <script src="__JS__/submit.min.js" charset="utf-8"></script>
+<script src="__JS__/emoji_arr.js"></script>
+<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
 <script src="__LAYER__/layer.js"></script>
 <script>
-    function addImage(){
-        $("#image").click();
-    }
-    $("#image").change(function(){
-        var str = $("#image").val();
-        // var str1 = $("#image")[0].files;
-        // console.log(str1);
-        var arr=str.split('\\');
-        var my=arr[arr.length-1]; //图片名字
-        $("#sm").text(my);
-        $("#loveimg").val(my);
-    });
+  $(document).ready(function() {
+      var E = window.wangEditor;
+      var editor = new E('#editor');
+      var $text1 = $('#contents');
+      var arr = emojiArr();
+      var em_arr = [];
+      for(let i = 1; i <= 56; i++) {
+          em_arr[i] = {
+              "src" : '__IMG__/gif/1 (' + i + ').gif'
+          };
+      }
+      editor.customConfig.emotions = [
+          {
+              // tab 的标题
+              title: 'QQ表情',
+              // type -> 'emoji' / 'image'
+              type: 'image',
+              // content -> 数组
+              content: arr
+          },
+          {
+              // tab 的标题
+              title: 'QQ大黄脸',
+              // type -> 'emoji' / 'image'
+              type: 'image',
+              // content -> 数组
+              content: em_arr
+          }
+      ];
+      editor.customConfig.menus = [
+          'emoticon'
+      ];
+      editor.customConfig.onchange = function (html) {
+          // 监控变化，同步更新到 textarea
+          $text1.val(html)
+      };
+      editor.create();
+      $text1.val(editor.txt.html())
+  });
+  function addImage(){
+      $("#image").click();
+  }
 
+  $("#image").change(function(){
+      var str = $("#image").val();
+      // var str1 = $("#image")[0].files;
+      // console.log(str1);
+      var arr=str.split('\\');
+      var my=arr[arr.length-1]; //图片名字
+      $("#sm").text(my);
+      $("#loveimg").val(my);
+  });
 </script>
 </body>
 </html>

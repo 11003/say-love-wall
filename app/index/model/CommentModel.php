@@ -32,7 +32,7 @@ class CommentModel extends Model
         try{
             $data['ip'] =  get_client_ip();  // 不用session,用户可能没有表白
             $data['mtime'] = time();
-            $result = $this->validate(['contents'=>'require|max:520'],['contents.require'=>'评论内容不能为空!','contents.max'=>'评论内容不能超过520字'])->save($data);
+            $result = $this->validate(['contents'=>'require'],['contents.require'=>'评论内容不能为空!'])->save($data);
 
             if($result === false){
                 return msg(-1,'',$this->getError());

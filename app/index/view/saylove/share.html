@@ -16,6 +16,20 @@
 </head>
 
 <body>
+		<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 {include file="common/head"}
 <div class="main-body" id="main" data-role="content">
 
@@ -58,14 +72,14 @@
 <div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <div class="" data-role="navbar">
         <ul>
-            <li><a href="/" data-ajax='false' data-transition="slide" data-direction="reverse" data-role="button" data-icon="article" class="ui-icon-article" data-iconpos="notext"></a></li>
-            <li><a href="/saylove" data-ajax='false' data-role="button" data-icon="heart" class="ui-icon-heart" data-iconpos="notext"></a></li>
-            <li><a href="/search" data-ajax='false' data-role="button" data-icon="search" class="ui-icon-search" data-iconpos="notext"></a></li>
-            <li><a href="/help" data-ajax='false' data-role="button" data-icon="help" class="ui-icon-help" data-iconpos="notext"></a></li>
+            <li><a href="/" data-ajax='false' data-transition="slide" data-direction="reverse" data-role="button" data-icon="article" class="ui-icon-article" data-iconpos="notext">首页</a></li>
+            <li><a href="/saylove" data-ajax='false' data-role="button" data-icon="heartNow" class="ui-icon-heart" data-iconpos="notext">表白</a></li>
+            <li><a href="/search" data-ajax='false' data-role="button" data-icon="search" class="ui-icon-search" data-iconpos="notext">搜索</a></li>
+            <li><a href="/help" data-ajax='false' data-role="button" data-icon="help" class="ui-icon-help" data-iconpos="notext">帮助</a></li>
         </ul>
     </div>
-
 </div>
+
 <div data-role="popup" class="ui-content" data-overlay-theme="b" id="guess-Name-Popup">
     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
     <h4>猜名字</h4>

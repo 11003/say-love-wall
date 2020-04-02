@@ -11,10 +11,9 @@ class Index extends Base
     public function index()
     {
         $db = db('config');
-        $where['is_del'] = ['neq','2'];
-        $res = $db->where('id','in','1,2,3,4')->where($where)->select();
-        $leftRes = $db->where('id','in','6,7,8,9,10')->where($where)->select();
-        $goToTop = $db->where('id','11')->where($where)->find();
+        $res = $db->where('id','in','1,2,3,4')->select();
+        $leftRes = $db->where('id','in','6,7,8,9,10')->select();
+        $goToTop = $db->where('id','11')->find();
 
         cache('res',$res);
         cache('leftres',$leftRes);

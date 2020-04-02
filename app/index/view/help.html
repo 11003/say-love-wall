@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>帮助 - 共青科技告白墙</title>
+    <title>帮助 - {$seoImg.title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -14,9 +14,34 @@
 </head>
 
 <body>
+	<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 {include file="common/head"}
 <div class="main-body" id="help-box" data-role="content">
-    <h2>帮助</h2>
+    <center><h2>帮助</h2></center>
+    <p class="female"><br>  </p>
+    </br>
+    <font color="red">
+        <h3>
+            <p>
+                该网站纯属娱乐，不承担任何后果和法律责任！
+            </p>
+        </h3>
+    </font>
+    <p class="male"><br></p>
     <h4>
         主要功能：
     </h4>
@@ -31,43 +56,55 @@
         <li>搜索表白</li>
         <li>可以选择浏览的排序方式</li>
     </ol>
+    <p class="female"><br>  </p>
     <h4>
         功能介绍：
     </h4>
     <h5>
+        表白网页
+    </h5>
+    </p>
+    <!-- 支持开发者，请至少在帮助页面保留此信息 start-->
+    <p class="male"><br></p>
+    <h5>
         发起表白
     </h5>
     <p>
-        该功能需要填写你的昵称、你的真名（绝不泄露）、选择性别、TA的名字、TA的性别、表白内容、表白图片。邮箱是可选填写，如果填写了，系统会代发一封邮件到对方邮箱账号，默认填写对方的QQ号码即可，自动补全邮箱后缀，此邮件只包含该表白链接和邮箱样式，不包含其他信息。
-        注：一位同学一天只能发送三次告白
+        该功能需要填写你的昵称、你的真名（绝不泄露）、选择性别、TA的名字、TA的性别、表白内容。邮箱是可选填写，如果填写了，系统会代发一封邮件到对方邮箱账号，默认填写对方的QQ号码即可，自动补全邮箱后缀，此邮件只包含该表白的链接，不包含其他信息。
     </p>
     <p>
         你的真名和对方的邮箱绝不公开！
     </p>
+    <p class="female"><br></p>
     <h5>
         邮件发送
     </h5>
     <p>
         该功能是可选的，不想发送邮件就留空，默认填写对方QQ即可。如果邮箱发送失败，系统会在稍后重新发送，请放心！
     </p>
+    <p class="male"><br></p>
     <h5>
         搜索表白
     </h5>
     <p>
         能够同时搜索表白发起者和被表白者的名字
     </p>
-    <h5>
-        蓝/红/黑下划线说明
-    </h5>
-    <p class="male">
-        蓝色下划线：是男生
-    </p>
-    <p class="female">
-        红色下划线：是女生
-    </p>
-    <p class="secrecy">
-        黑色下划线：性别保密
-    </p>
+    <p class="female"><br></p>
+
+        <h5>
+            蓝/红/黑下划线说明
+        </h5>
+        <p class="male">
+            蓝色下划线：是男生
+        </p>
+        <p class="female">
+            红色下划线：是女生
+        </p>
+        <p class="secrecy">
+            黑色下划线：性别保密
+        </p>
+
+        <h5>
     <h5>
         <img src="__IMG__/icon/dianzan.png" alt="" />
         点赞功能
@@ -76,6 +113,7 @@
         为了公平起见。每人只能点一次赞，能够影响按照点赞的数量排名
         <!--每隔60秒就能给表白点赞，能够影响按照点赞的数的排名。-->
     </p>
+    <p class="female"><br></p>
     <h5>
         <img src="__IMG__/icon/jingcai.png" alt="" />
         猜名字功能
@@ -83,6 +121,7 @@
     <p>
         为了增加互动性，在填写表白的时候需要填写你的真名或别称或一个辨识度比较高的名字，可以让被表白者猜一猜这个名字，每次猜名字都会反馈输入的名字和真实的名字的相似度，这个相似度可以判断自己的输入是否接近真名。如果不想参加该游戏，随便填写一个名字即可。
     </p>
+    <p class="male"><br></p>
     <h5>
         <img src="__IMG__/icon/pinglun.png" alt="" />
         评论功能
@@ -90,6 +129,7 @@
     <p>
         可以评论表白，增加互动，绝不暴露真实IP地址。
     </p>
+    <p class="female"><br></p>
     <h5>
         <img src="__IMG__/icon/fenxiang.png" alt="" />
         分享功能
@@ -97,33 +137,8 @@
     <p>
         想让朋友查看这条表白？那就选择分享功能吧！复制链接发给好友即可完成分享！
     </p>
-    <h4>
-        首页底部按钮介绍：
-    </h4>
-    <h5>
-        <img src="__CSS__/images/icons-png/arrow-l-black.png" alt="" />
-        上一页
-    </h5>
-<p>上一页</p>
-    <h5>
-        <img src="__CSS__/images/icons-png/bars-black.png" alt="" />
-        选择排序方式
-    </h5>
-    <p>
-        提供了按照时间，点赞数和随机显示的排序方式
-    </p>
-    <h5>
-        <img src="__CSS__/images/icons-png/carat-u-black.png" alt="" />
-        返回顶部
-    </h5>
-    <p>
-        跳转到网页的顶部
-    </p>
-    <h5>
-        <img src="__CSS__/images/icons-png/arrow-r-black.png" alt="" />
-        下一页
-    </h5>
-    <p>下一页</p>
+	<p class="male"><br></p>
+
 
 
 </div>
@@ -146,7 +161,7 @@
     </div>
 
 </div>
-{include file='common/script'}
+
 </body>
 
 </html>

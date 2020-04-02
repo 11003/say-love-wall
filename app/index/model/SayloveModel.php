@@ -11,6 +11,7 @@ use think\Model;
 use app\index\model\LikeModel;
 use app\index\model\GuessModel;
 use similar\Lcs;
+use filter\FilterContentsEmoji;
 use think\Db;
 use think\Cache;
 use think\Image;
@@ -83,9 +84,10 @@ class SayloveModel extends Model
             $guess_yes = $this->guess_name_yes($v['id']);
             // 获取猜名字总数 -- 总数
             $guess_count = $this->guess_name_count($v['id']);
+//            $v['contents'] = FilterContentsEmoji::getFilterContents($v['contents']);
+            $v['loveImage'] = $v['loveImage'] ? $v['loveImage'] : "undefined";
             // 判断是否点赞了
             $is_like = $like->isLike($ip,$v['id']);
-
             $v['comment_count'] = $comment_count;
             $v['trueName'] = '-';
             $v['love'] = intval($v['love']);
@@ -190,7 +192,7 @@ class SayloveModel extends Model
      */
     public function setPushCount($uip)
     {
-        return $this->where('ip',$uip)->whereTime('mtime','d')->count('id');
+        return $this->where('ip',$uip)->whereTime('mtime','d')->count();
     }
 
 

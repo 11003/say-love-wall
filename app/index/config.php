@@ -22,15 +22,15 @@ return [
 
     'smtp_setting' => [
         //设置邮件头的From字段
-        'from' => '遇见你我爱你表白墙',
+        'from' => '表白墙',
         // SMTP 用户名，如果是QQ邮箱申请的则填写QQ邮箱
-        'username' => '104013@qq.com',
+        'username' => '814029073@qq.com',
         // SMTP 密码，如果是QQ邮箱申请的则填写开通SMTP服务后生成的密码
-        'password' => 'zfdcfitbcqdcbgfb',
+        'password' => '',
         // SMTP 邮箱地址，如果是QQ邮箱申请的则填写QQ邮箱
-        'address'=> '104013@qq.com',
+        'address'=> '814029073@qq.com',
         // 分享地址，填写到能够访问该表白墙 share.php 文件的地址
-        'link' => 'http://xn--6qq163lede.xn--6qq986b3xl/share',
+        'link' => 'http://love.liuhai.fun/share',
         // 邮件标题
         "title" => "你被表白啦！来自遇见你我爱你表白墙",
         // 邮件内容，{{link}} 为表白链接的占位符，可随意更改位置，系统自动替换为表白链接。
@@ -48,5 +48,5 @@ return [
     // 运行用户一天发送几次(不能为1或者0)
     'limit_push' => 5,
     // QQ号码
-    'qq' => '104013'
+    'qq' => '814029073'
 ];

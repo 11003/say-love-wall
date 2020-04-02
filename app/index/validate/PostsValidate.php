@@ -13,7 +13,7 @@ class PostsValidate extends Validate
         'nickName'  =>  'require|max:15',
         'trueName'  =>  'require|max:15',
         'towho'  =>  'require|max:15',
-        'contents'  =>  'require|max:520',
+        'contents'  =>  'require',
     ];
 
     protected $message = [
@@ -23,8 +23,7 @@ class PostsValidate extends Validate
         'trueName.max'  =>  '真实名字限制在15字符内！',
         'trueName.require'  =>  '请填写你的真实姓名哦~<br><a target="_blank" href="/help">为什么要填真实姓名?</a>',
         'towho.require'  =>  'TA的名字未填~',
-        'contents.require'  =>  '表白的内容未填~',
-        'contents.max'  =>  '表白的内容限制在520字符内！',
+        'contents.require'  =>  '表白的内容未填~'
     ];
 
 }

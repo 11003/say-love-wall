@@ -10,12 +10,30 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
     <link href='https://unpkg.com/nprogress@0.2.0/nprogress.css' rel='stylesheet' />
 </head>
+
+<body>
+	<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 <style>
     .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear{
         top: 15%;
     }
+    #search-bars {
+        margin-bottom: 150px;
+    }
 </style>
-<body>
 {include file="common/head"}
 <div class="main-body" id="search-bars" data-role="content">
     <div class="ui-field-contain">

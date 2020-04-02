@@ -67,7 +67,7 @@
 
 - 在线测试 前台
 
-[http://love.liuhai.fun./](http://love.liuhai.fun./)
+[http://love.liuhai.fun/](http://love.liuhai.fun./)
 
 - 后台
 

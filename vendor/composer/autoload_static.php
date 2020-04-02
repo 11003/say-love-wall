@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf689f3bf5606e438ed5cc520a02fe332
+class ComposerStaticInitbf6aa26ff7d2c88f0f68349ae84be5b9
 {
     public static $files = array (
         '036ec262f4bcc331fe80b225c0cd7b46' => __DIR__ . '/..' . '/terranc/blade/src/helpers.php',
@@ -50,9 +50,9 @@ class ComposerStaticInitf689f3bf5606e438ed5cc520a02fe332
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf689f3bf5606e438ed5cc520a02fe332::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf689f3bf5606e438ed5cc520a02fe332::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf689f3bf5606e438ed5cc520a02fe332::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbf6aa26ff7d2c88f0f68349ae84be5b9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbf6aa26ff7d2c88f0f68349ae84be5b9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitbf6aa26ff7d2c88f0f68349ae84be5b9::$classMap;
 
         }, null, ClassLoader::class);
     }

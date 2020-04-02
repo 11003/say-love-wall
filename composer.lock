@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "028aceea3da6c45c99fc8dc62fb92e2d90faa2d8"
+                "reference": "cc8da73fa21f59ee57281bf591d223fe8971b98e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/028aceea3da6c45c99fc8dc62fb92e2d90faa2d8",
-                "reference": "028aceea3da6c45c99fc8dc62fb92e2d90faa2d8",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/cc8da73fa21f59ee57281bf591d223fe8971b98e",
+                "reference": "cc8da73fa21f59ee57281bf591d223fe8971b98e",
                 "shasum": ""
             },
             "require": {
@@ -26,13 +26,9 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "doctrine/annotations": "1.2.*",
+                "doctrine/annotations": "^1.2",
                 "friendsofphp/php-cs-fixer": "^2.2",
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "^4.8 || ^5.7",
-                "zendframework/zend-eventmanager": "3.0.*",
-                "zendframework/zend-i18n": "2.7.3",
-                "zendframework/zend-serializer": "2.7.*"
+                "phpunit/phpunit": "^4.8 || ^5.7"
             },
             "suggest": {
                 "ext-mbstring": "Needed to send email in multibyte encoding charset",
@@ -50,16 +46,16 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-2.1"
+                "LGPL-2.1-only"
             ],
             "authors": [
                 {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
-                },
-                {
                     "name": "Marcus Bointon",
                     "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
                 },
                 {
                     "name": "Andy Prevost",
@@ -70,7 +66,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2018-11-16T13:18:48+00:00"
+            "time": "2019-12-28T10:09:55+00:00"
         },
         {
             "name": "terranc/blade",
@@ -118,12 +114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/terranc/think-blade.git",
-                "reference": "8ac6c7bbaaa204432e0537b38f1aae58421ee0da"
+                "reference": "4a9e3fcb92c6da2f3ae7226de36781bd0132383c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/terranc/think-blade/zipball/8ac6c7bbaaa204432e0537b38f1aae58421ee0da",
-                "reference": "8ac6c7bbaaa204432e0537b38f1aae58421ee0da",
+                "url": "https://api.github.com/repos/terranc/think-blade/zipball/4a9e3fcb92c6da2f3ae7226de36781bd0132383c",
+                "reference": "4a9e3fcb92c6da2f3ae7226de36781bd0132383c",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +145,7 @@
                 }
             ],
             "description": "think blade view engine",
-            "time": "2018-10-31T03:48:32+00:00"
+            "time": "2018-12-27T03:41:28+00:00"
         },
         {
             "name": "topthink/framework",
@@ -157,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "8a52dd232fcac998d393d05b1246e0f54bdc9dcb"
+                "reference": "a33d8847f58a978f1b19c373ca4ee796e8809ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/8a52dd232fcac998d393d05b1246e0f54bdc9dcb",
-                "reference": "8a52dd232fcac998d393d05b1246e0f54bdc9dcb",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/a33d8847f58a978f1b19c373ca4ee796e8809ccb",
+                "reference": "a33d8847f58a978f1b19c373ca4ee796e8809ccb",
                 "shasum": ""
             },
             "require": {
@@ -200,7 +196,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2017-07-18T08:19:42+00:00"
+            "time": "2020-01-07T10:36:18+00:00"
         },
         {
             "name": "topthink/think-image",
