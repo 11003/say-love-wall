@@ -63,29 +63,15 @@
 [back/love_liuhai.sql](https://github.com/Haiwar/say-love-wall/tree/master/back)
 
 
-## 地址：
+## 后台
 
-- 在线测试 前台
-
-[http://love.liuhai.fun/](http://love.liuhai.fun./)
-
-- 后台
-
-（在线）
-
+```
 账号：test
 
 密码：test
+```
 
-[http://love.liuhai.fun/admin](表白墙后台)
-
-（sql文件）
-
-账号：admin
-
-密码：admin
-
-[http://localhost/admin](http://localhost/admin)
+[http://love.musclewiki.cn/admin](表白墙后台)
 
 # 最后
 
