@@ -83,7 +83,7 @@ function contents($data,$a_tag='')
 <p class="footer" style="padding-top: 6px; margin-top: 15px; color: #838383; text-align: center;">
 
 </p> 
-<a style="display: block; width: 400px; height: 40px; background: #DB2828; margin: 25px auto 40px; font-size: 16px; line-height: 40px; letter-spacing: 3px; color: #f8f8f8; text-align: center; text-decoration: none;" href='.$a_tag.' target="_blank">查看完整內容(>▽<)~&gt;&gt;</a> <p style="text-align: center;color: #bbb;margin-top: 40px;">此邮件来自 - <a target="_blank" href="http://love.liuhai.fun/">Sonder</a> - 表白墙</p> </div> </div>';
+<a style="display: block; width: 400px; height: 40px; background: #DB2828; margin: 25px auto 40px; font-size: 16px; line-height: 40px; letter-spacing: 3px; color: #f8f8f8; text-align: center; text-decoration: none;" href='.$a_tag.' target="_blank">查看完整內容(>▽<)~&gt;&gt;</a> <p style="text-align: center;color: #bbb;margin-top: 40px;">此邮件来自 - <a target="_blank" href="'.config("_config.web_address").'">'.config("_config.my_name").'</a> - 表白墙</p> </div> </div>';
 }
 
 /**

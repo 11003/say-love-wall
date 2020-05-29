@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : 1
  Source Server Type    : MySQL
  Source Server Version : 50553
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50553
  File Encoding         : 65001
 
- Date: 24/07/2019 00:40:40
+ Date: 29/05/2020 20:37:26
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,11 @@ CREATE TABLE `gk_articles`  (
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文章内容',
   `add_time` datetime NOT NULL COMMENT '发布时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
+
+-- ----------------------------
+-- Records of gk_articles
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for gk_blacklist
@@ -46,7 +50,11 @@ CREATE TABLE `gk_blacklist`  (
   `mtime` int(11) NULL DEFAULT NULL,
   `appeal_time` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of gk_blacklist
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for gk_comments
@@ -59,7 +67,28 @@ CREATE TABLE `gk_comments`  (
   `ip` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `mtime` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
+
+-- ----------------------------
+-- Records of gk_comments
+-- ----------------------------
+INSERT INTO `gk_comments` VALUES (1, 7, '123', '183.210.65.108', 1584090043);
+INSERT INTO `gk_comments` VALUES (2, 7, '123', '183.210.65.108', 1584090048);
+INSERT INTO `gk_comments` VALUES (3, 8, '评论', '117.139.133.25', 1584164581);
+INSERT INTO `gk_comments` VALUES (4, 8, '评论', '117.139.133.25', 1584164582);
+INSERT INTO `gk_comments` VALUES (5, 8, '评论', '117.139.133.25', 1584164583);
+INSERT INTO `gk_comments` VALUES (6, 8, '<p><br></p>', '117.139.133.25', 1584240418);
+INSERT INTO `gk_comments` VALUES (7, 9, '<p>11111</p>', '117.139.133.25', 1584243398);
+INSERT INTO `gk_comments` VALUES (8, 9, '<p><br></p>', '117.139.133.25', 1584243449);
+INSERT INTO `gk_comments` VALUES (9, 9, '&lt;p&gt;&lt;br&gt;&lt;/p&gt;', '117.139.133.25', 1584243486);
+INSERT INTO `gk_comments` VALUES (10, 13, '<p>好的</p>', '121.32.158.123', 1584784904);
+INSERT INTO `gk_comments` VALUES (11, 13, '<p>hello</p>', '117.139.132.198', 1585104292);
+INSERT INTO `gk_comments` VALUES (12, 13, '<p><br></p>', '27.212.144.40', 1585297138);
+INSERT INTO `gk_comments` VALUES (13, 13, '<p><br></p>', '27.212.144.40', 1585297143);
+INSERT INTO `gk_comments` VALUES (14, 13, '<p><br></p>', '27.212.144.40', 1585297144);
+INSERT INTO `gk_comments` VALUES (15, 13, '<p><br></p>', '182.148.15.51', 1589507698);
+INSERT INTO `gk_comments` VALUES (16, 20, '<p>这什么东西</p>', '112.96.70.119', 1590371131);
+INSERT INTO `gk_comments` VALUES (17, 20, '<p>表白墙</p>', '182.148.13.127', 1590396537);
 
 -- ----------------------------
 -- Table structure for gk_config
@@ -72,23 +101,26 @@ CREATE TABLE `gk_config`  (
   `thumbnail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
   `href` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
   `href_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `is_del` tinyint(3) UNSIGNED NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of gk_config
 -- ----------------------------
-INSERT INTO `gk_config` VALUES (1, '我要表白', '#0E6EB8', '/upload/20181224/8b2f6a79533f1acdbeef9a70aceae742.png', '/saylove', '');
-INSERT INTO `gk_config` VALUES (2, '首页', '#FE9A76', '/upload/20181224/91464de4792401f9e0c061c4bc27571f.png', '/', '');
-INSERT INTO `gk_config` VALUES (3, '排序', '#B03060', '/upload/20181224/1ff2bdea316eecfa2180dd731c3f897f.png', '#myPanel', '');
-INSERT INTO `gk_config` VALUES (4, '搜索', '#016936', '/upload/20181224/bf8547932a6128ec5c8d3a8cc96e66c4.png', '/search', '');
-INSERT INTO `gk_config` VALUES (6, '最新表白（默认）', '', '/upload/20181224/a466f5f6462af33c95654475decb5815.png', '#myPanel', 'new-posts');
-INSERT INTO `gk_config` VALUES (7, '最早表白', '', '/upload/20181224/3d8ae5bc6789a104791a80688020b87d.png', '#myPanel', 'old-posts');
-INSERT INTO `gk_config` VALUES (8, '点赞数最多', '', '/upload/20181224/7a560d7f18efbd3ebe4835f7c7b54aba.png', '#myPanel', 'most-liked');
-INSERT INTO `gk_config` VALUES (9, '点赞数最少', '', '/upload/20181224/73d4c55bef5840cca951b06e6ad67faf.png', '#myPanel', 'less-liked');
-INSERT INTO `gk_config` VALUES (10, '随机显示', '', '/upload/20181224/74bb801e05b01e6b382e78e93258f9e0.png', '#myPanel', 'random-posts');
-INSERT INTO `gk_config` VALUES (11, '返回顶部', '', '/upload/20181224/870d034ef6954b1a580bc7203d310731.png', '', '');
-INSERT INTO `gk_config` VALUES (13, '网站首页', '', '/upload/20190724/35344953ecfa93e35aff3f5a65930c7b.jpg', '', '');
+INSERT INTO `gk_config` VALUES (1, '我要表白', '#0E6EB8', 'https://i.loli.net/2020/03/14/twW8AlpdGKL1qoI.png', '/saylove', '', 1);
+INSERT INTO `gk_config` VALUES (2, '首页', '#FE9A76', 'https://i.loli.net/2020/03/14/UqJerws3gFBNW1C.png', '/', '', 1);
+INSERT INTO `gk_config` VALUES (3, '排序', '#B03060', 'https://i.loli.net/2020/03/14/a64VXLiY97o53fJ.png', '#myPanel', '', 1);
+INSERT INTO `gk_config` VALUES (4, '搜索', '#016936', 'https://i.loli.net/2020/03/14/S6UnombZY7gTJhu.png', '/search', '', 1);
+INSERT INTO `gk_config` VALUES (6, '最新表白（默认）', '', 'https://i.loli.net/2020/03/14/rCgLa6f2zROx4Nb.png', '#myPanel', 'new-posts', 1);
+INSERT INTO `gk_config` VALUES (7, '最早表白', '', 'https://i.loli.net/2020/03/14/rbxLUAtODGMnhp8.png', '#myPanel', 'old-posts', 1);
+INSERT INTO `gk_config` VALUES (8, '点赞数最多', '', 'https://i.loli.net/2020/03/14/jsKvV4ZLrmQP8Eh.png', '#myPanel', 'most-liked', 1);
+INSERT INTO `gk_config` VALUES (9, '点赞数最少', '', 'https://i.loli.net/2020/03/14/JrCUiMv9apZPtd5.png', '#myPanel', 'less-liked', 1);
+INSERT INTO `gk_config` VALUES (10, '随机显示', '', 'https://i.loli.net/2020/03/14/TCoqyXthcYwbNSW.png', '#myPanel', 'random-posts', 1);
+INSERT INTO `gk_config` VALUES (11, '返回顶部', '', 'https://i.loli.net/2020/03/14/mz9IjstrPaAXwyR.png', '', '', 1);
+INSERT INTO `gk_config` VALUES (13, '网站首页', '', '', '', '', 1);
+INSERT INTO `gk_config` VALUES (14, 'logo', '', '/upload/20200116/e84aa9adc567a54a91677e6114c6c007.jpg', NULL, '1', 1);
+INSERT INTO `gk_config` VALUES (18, 'footer-logo', '', 'https://i.loli.net/2020/03/14/xB9OfTDdIZ47bol.jpg', NULL, '1', 1);
 
 -- ----------------------------
 -- Table structure for gk_guess
@@ -102,7 +134,14 @@ CREATE TABLE `gk_guess`  (
   `ip` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `mtime` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
+
+-- ----------------------------
+-- Records of gk_guess
+-- ----------------------------
+INSERT INTO `gk_guess` VALUES (1, 7, '123', '1', '183.210.65.108', 1584090058);
+INSERT INTO `gk_guess` VALUES (2, 20, '怕', '1', '42.228.224.177', 1588226143);
+INSERT INTO `gk_guess` VALUES (3, 20, '导航', '0', '182.148.15.105', 1589891147);
 
 -- ----------------------------
 -- Table structure for gk_like
@@ -114,7 +153,34 @@ CREATE TABLE `gk_like`  (
   `ip` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `mtime` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
+
+-- ----------------------------
+-- Records of gk_like
+-- ----------------------------
+INSERT INTO `gk_like` VALUES (1, 2, '117.164.149.28', 1579627291);
+INSERT INTO `gk_like` VALUES (2, 2, '117.165.191.167', 1579781661);
+INSERT INTO `gk_like` VALUES (3, 4, '60.255.85.47', 1580976740);
+INSERT INTO `gk_like` VALUES (4, 5, '171.35.99.161', 1582803248);
+INSERT INTO `gk_like` VALUES (5, 4, '171.35.99.161', 1582803251);
+INSERT INTO `gk_like` VALUES (6, 4, '113.222.5.125', 1582887839);
+INSERT INTO `gk_like` VALUES (7, 6, '125.211.31.123', 1583667680);
+INSERT INTO `gk_like` VALUES (8, 7, '183.210.65.108', 1584090054);
+INSERT INTO `gk_like` VALUES (9, 8, '14.17.22.253', 1584100570);
+INSERT INTO `gk_like` VALUES (10, 9, '117.139.133.25', 1584240708);
+INSERT INTO `gk_like` VALUES (11, 11, '223.91.90.154', 1584261267);
+INSERT INTO `gk_like` VALUES (12, 10, '223.91.90.154', 1584261269);
+INSERT INTO `gk_like` VALUES (13, 10, '223.96.38.228', 1584708750);
+INSERT INTO `gk_like` VALUES (14, 13, '121.32.158.123', 1584784883);
+INSERT INTO `gk_like` VALUES (15, 13, '117.139.132.198', 1585104294);
+INSERT INTO `gk_like` VALUES (16, 18, '111.197.20.161', 1588100616);
+INSERT INTO `gk_like` VALUES (17, 19, '42.228.224.177', 1588222470);
+INSERT INTO `gk_like` VALUES (18, 20, '42.228.224.177', 1588226154);
+INSERT INTO `gk_like` VALUES (19, 19, '36.189.230.221', 1588855454);
+INSERT INTO `gk_like` VALUES (20, 20, '182.148.15.105', 1589891152);
+INSERT INTO `gk_like` VALUES (21, 19, '182.148.15.105', 1589891154);
+INSERT INTO `gk_like` VALUES (22, 20, '171.210.190.69', 1590068734);
+INSERT INTO `gk_like` VALUES (23, 20, '182.148.13.127', 1590396546);
 
 -- ----------------------------
 -- Table structure for gk_node
@@ -129,7 +195,7 @@ CREATE TABLE `gk_node`  (
   `type_id` int(11) NOT NULL COMMENT '父级节点id',
   `style` varchar(155) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '菜单样式',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of gk_node
@@ -196,13 +262,14 @@ CREATE TABLE `gk_posts`  (
   `ip` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `love` int(11) NULL DEFAULT 0,
   `loveImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '图片',
+  `is_del` tinyint(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of gk_posts
 -- ----------------------------
-INSERT INTO `gk_posts` VALUES (1, '1', 'female', 'male', '1', '2', '1 love 2', '', 1, 1563899835, '127.0.0.1', 0, '/upload\\20190724/bb869d60d544446b3fc04b9655a21548.jpg');
+INSERT INTO `gk_posts` VALUES (1, '1', 'female', 'male', '1', '2', '1 love 2', '', 1, 1563899835, '127.0.0.1', 0, '/upload\\20190724/bb869d60d544446b3fc04b9655a21548.jpg', NULL);
 
 -- ----------------------------
 -- Table structure for gk_role
@@ -213,13 +280,13 @@ CREATE TABLE `gk_role`  (
   `role_name` varchar(155) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色名称',
   `rule` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '权限节点数据',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of gk_role
 -- ----------------------------
 INSERT INTO `gk_role` VALUES (1, '超级管理员', '*');
-INSERT INTO `gk_role` VALUES (2, '系统维护员', '1,2,3,4,5,6,7,8,9,10,15,16,17,18,19,20,21,29,31,34,35');
+INSERT INTO `gk_role` VALUES (2, '系统维护员', '29,31,32,33,37,38');
 
 -- ----------------------------
 -- Table structure for gk_user
@@ -237,11 +304,12 @@ CREATE TABLE `gk_user`  (
   `status` int(1) NOT NULL DEFAULT 0 COMMENT '状态',
   `role_id` int(11) NOT NULL DEFAULT 1 COMMENT '用户角色id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of gk_user
 -- ----------------------------
-INSERT INTO `gk_user` VALUES (1, 'admin', 'a9ddd2e7bdff202e3e9bca32765e9ba0', '/upload/head/BPGJxpRrsSoCv0iE8XDuaZ4enmkN7tfd.jpeg', 73, '127.0.0.1', 1563899795, 'admin', 1, 1);
+INSERT INTO `gk_user` VALUES (1, 'admin', 'a9ddd2e7bdff202e3e9bca32765e9ba0', '/upload/head/PKBJLqVxga9uwA5dbpek0WmjHn6rXvD8.jpeg', 83, '127.0.0.1', 1590754993, 'admin', 1, 1);
+INSERT INTO `gk_user` VALUES (2, 'test', '4bd9c8dfaaa703aeeab4bb73f7c82c00', '/upload/head/0Q6sGALkgHlwZzM3ViUh7XEN8fJPTR9F.jpeg', 5, '221.15.37.78', 1590659590, 'admin2', 1, 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
