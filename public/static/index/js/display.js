@@ -354,7 +354,7 @@ function output(result, total, total_pages) {
         if (image == "undefined") {
 
         } else {
-            $("<p>").addClass("post-body-image").html('<a href="' + image + '" data-fancybox="gallery"><img src= "' + image + '" original="' + image + '" style="max-width: 100%;max-height: 50%;border-radius: 5px;"/></a>').appendTo(".post-body-" + id)
+            $("<p>").addClass("post-body-image").html('<a href="' + image + '" data-fancybox="gallery"><img class="lazy" data-origina= "' + image + '" original="' + image + '" style="max-width: 100%;max-height: 50%;border-radius: 5px;"/></a>').appendTo(".post-body-" + id)
         }
         $("<p>").addClass("post-body-time").text(time).appendTo(".post-body-" + id);
         $("<div>").addClass("post-actions action ui-navbar").addClass("post-actions-" + id).attr("data-role", "navbar").attr("role", "navigation").appendTo(".post-" + id);

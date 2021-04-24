@@ -141,6 +141,9 @@
     .w-e-text-container .w-e-panel-container .w-e-emoticon-container .w-e-item {
         padding: 0;
     }
+    .ui-mobile .ui-page-active {
+        overflow: hidden !important;
+    }
 </style>
 <span id="index"></span>
 <!-- 左侧拉栏 -->
@@ -304,7 +307,16 @@
 {include file='common/script'}
 <script>
 
-
+    window.onscroll = function () {
+        Limg()
+    }
+    window.onload = function () {
+        var img = document.querySelectorAll("img[data-src]")
+        for (var i = 0; i < img.length; i++) {
+            img[i].style.opacity = "0"
+        }
+        Limg();
+    }
   $(document).ready(function() {
       var E = window.wangEditor;
       var editor = new E('#editor');
@@ -334,6 +346,8 @@
 
     $(".fancybox").fancybox();
 });
+function Limg(){var viewHeight=document.documentElement.clientHeight;var limg=document.querySelectorAll("img[data-origina]");Array.prototype.forEach.call(limg,function(item,index){var rect;if(item.getAttribute("data-origina")===""){return}rect=item.getBoundingClientRect();if(rect.bottom>=0&&rect.top<viewHeight){(function(){var img=new Image();img.src=item.getAttribute("data-origina");item.src=img.src;var j=0;setInterval(function(){j+=0.2;if(j<=1){item.style.opacity=j;return}},100);item.removeAttribute('data-origina')})()}})}
+
 </script>
 </body>
 </html>
