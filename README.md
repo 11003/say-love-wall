@@ -46,6 +46,15 @@
 
 ![](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)
 
+### 建议删除`vender`这个文件夹并重新安装composer依赖包
+
+![](https://gitee.com/liuhaier/images/raw/master/img/20211016224108.png)
+
+```
+//路径：/www/wwwroot/love/vendor
+composer install --ignore-platform-reqs
+```
+
 ### 主要数据表解释
 
 [![5@KZ{A_E`F`VM~E0GW5NYZ9.png](https://i.loli.net/2019/07/24/5d373ac354b2a53976.png)](https://i.loli.net/2019/07/24/5d373ac354b2a53976.png)
