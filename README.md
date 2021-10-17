@@ -46,7 +46,7 @@
 
 ![](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)
 
-如果遇到**邮箱发送失败 connectIed()无法连接 **检测以下情况：
+如果遇到 **邮箱发送失败 connectIed()无法连接** 检测以下情况：
 
 1. 查看`465端口`是否被占用
 2. 在首页打印`phphinfo()`查看`php.ini`的`php_openssl.dll`和`php_sockets.dll`是否打开
