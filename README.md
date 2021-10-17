@@ -46,6 +46,20 @@
 
 ![](https://i.loli.net/2019/07/24/5d373a26ddee161372.png)
 
+如果遇到**邮箱发送失败 connectIed()无法连接 **检测以下情况：
+
+1. 查看`465端口`是否被占用
+2. 在首页打印`phphinfo()`查看`php.ini`的`php_openssl.dll`和`php_sockets.dll`是否打开
+
+```
+;extension=php_sockets.dll
+;extension=php_openssl.dll
+```
+
+3. 登录你买的服务器查看`465端口`是否开启
+
+开启教程：https://www.cheshirex.com/143.html
+
 ### 建议删除`vender`这个文件夹并重新安装composer依赖包
 
 ![](https://gitee.com/liuhaier/images/raw/master/img/20211016224108.png)
