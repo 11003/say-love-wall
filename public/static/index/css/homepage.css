@@ -11,15 +11,113 @@ html, body{
     background-attachment: fixed;
     overflow-scrolling: touch;
 }
+.github-fork-ribbon {
+    width: 12.1em;
+    height: 12.1em;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 13px;
+    text-decoration: none;
+    text-indent: -999999px
+}
 
+.github-fork-ribbon.fixed {
+    position: fixed
+}
+
+.github-fork-ribbon:active,.github-fork-ribbon:hover {
+    background-color: rgba(0,0,0,0)
+}
+
+.github-fork-ribbon:after,.github-fork-ribbon:before {
+    position: absolute;
+    display: block;
+    width: 15.38em;
+    height: 1.54em;
+    top: 3.23em;
+    right: -3.23em;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.github-fork-ribbon:before {
+    content: "";
+    padding: .38em 0;
+    background-color: #a00;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.15)));
+    background-image: -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+    background-image: -moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+    background-image: -ms-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+    background-image: -o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.15));
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.15));
+    -webkit-box-shadow: 0 .15em .23em 0 rgba(0,0,0,.5);
+    -moz-box-shadow: 0 .15em .23em 0 rgba(0,0,0,.5);
+    box-shadow: 0 .15em .23em 0 rgba(0,0,0,.5);
+    pointer-events: auto
+}
+
+.github-fork-ribbon:after {
+    content: attr(data-ribbon);
+    color: #fff;
+    font: 700 1em "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.54em;
+    text-decoration: none;
+    text-shadow: 0 -.08em rgba(0,0,0,.5);
+    text-align: center;
+    text-indent: 0;
+    padding: .15em 0;
+    margin: .15em 0;
+    border-width: .08em 0;
+    border-style: dotted;
+    border-color: #fff;
+    border-color: rgba(255,255,255,.7)
+}
+
+.github-fork-ribbon.left-bottom,.github-fork-ribbon.left-top {
+    right: auto;
+    left: 0
+}
+
+.github-fork-ribbon.left-bottom,.github-fork-ribbon.right-bottom {
+    top: auto;
+    bottom: 0
+}
+
+.github-fork-ribbon.left-bottom:after,.github-fork-ribbon.left-bottom:before,.github-fork-ribbon.left-top:after,.github-fork-ribbon.left-top:before {
+    right: auto;
+    left: -3.23em
+}
+
+.github-fork-ribbon.left-bottom:after,.github-fork-ribbon.left-bottom:before,.github-fork-ribbon.right-bottom:after,.github-fork-ribbon.right-bottom:before {
+    top: auto;
+    bottom: 3.23em
+}
+
+.github-fork-ribbon.left-top:after,.github-fork-ribbon.left-top:before,.github-fork-ribbon.right-bottom:after,.github-fork-ribbon.right-bottom:before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
 .navbar li a {
     background-color: #000;
 }
 .Header img{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 400px;
     max-height: 400px;
 }
 .ui-icon-article:after {
@@ -112,10 +210,10 @@ html, body{
     /*图标形态，0=方形，不设置就是默认的圆形*/
 }
 .ui-icon-like, .ui-icon-like:after{
-  transition: all 0.3s;
-  -moz-transition: all 0.3s;	/* Firefox 4 */
-  -webkit-transition: all 0.3s;	/* Safari 和 Chrome */
-  -o-transition: all 0.3s;	/* Opera */
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;	/* Firefox 4 */
+    -webkit-transition: all 0.3s;	/* Safari 和 Chrome */
+    -o-transition: all 0.3s;	/* Opera */
 }
 .ui-icon-guess:after {
     background-color: #fff;
@@ -145,69 +243,69 @@ html, body{
 }
 pre {
     font-family:zdy,sans-serif;
-white-space: pre-wrap!important;
-word-wrap: break-word!important;
-/*overflow: auto;*/
+    white-space: pre-wrap!important;
+    word-wrap: break-word!important;
+    /*overflow: auto;*/
 }
 .loading{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  height: 82px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 82px;
 }
 
 #Header{
-  background-color: initial;
-  /*background-image: url("../images/header.png");*/
-  background-position: center;
-  background-repeat: repeat-x;
-  border-color: initial;
-  background-size: contain;
-  border: 0px none;
-  color: #fff;
-  text-shadow: none;
-  font-weight: 700;
+    background-color: initial;
+    /*background-image: url("../images/header.png");*/
+    background-position: center;
+    background-repeat: repeat-x;
+    border-color: initial;
+    background-size: contain;
+    border: 0px none;
+    color: #fff;
+    text-shadow: none;
+    font-weight: 700;
 }
 .Header .Header-title{
-  margin-top: 10px;
-  margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .ui-header .ui-title, .ui-footer .ui-title{
-  text-shadow: 1px 2px #B71C1C;
-  font-size: 24px;
+    text-shadow: 1px 2px #B71C1C;
+    font-size: 24px;
 }
 .ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active{
-  background-color: #ff3333;
-  border-color:#ff3333;
+    background-color: #ff3333;
+    border-color:#ff3333;
 
 }
 html body .post .action ul li .ui-btn, html body .post .action ul li .ui-btn-active{
-  background-color: #fff;
-  border-color:#fff;
-  border-top: 1px solid #eee;
+    background-color: #fff;
+    border-color:#fff;
+    border-top: 1px solid #eee;
 }
 
 html body .action ul li .ui-btn:link, html body .action ul li .ui-btn:visited, html body .action ul li .ui-btn:active{
-  box-shadow: none;
+    box-shadow: none;
 }
 #guess-Name-Popup{
     width:15rem;
 }
 #guess-Name-Popup > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline, #comment-Popup > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline{
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 #guess-Name-Popup p{
-  color: #8c8888;
-  font-size: 14px;
+    color: #8c8888;
+    font-size: 14px;
 }
 #guess-hint, #comment-submit, #comment-hint{
-  color: #ff3333;
-  font-size: 16px;
-  margin-top: 20px;
+    color: #ff3333;
+    font-size: 16px;
+    margin-top: 20px;
 }
 #comment-lists{
-overflow-x: hidden;
+    overflow-x: hidden;
     max-height:30rem;
     height: 100%;
 }
@@ -217,26 +315,26 @@ overflow-x: hidden;
     height: 100%;
 }
 #comment-lists ul{
-  padding-left: 0;
+    padding-left: 0;
 }
 #comment-lists ul li{
-  list-style-type: none;
-  border-bottom: 1px solid #eee;
+    list-style-type: none;
+    border-bottom: 1px solid #eee;
 }
 #comment-lists .comment-ip{
-  text-align: left;
-  float: left;
-  color: #b3b3b3;
-  margin-top: 10px;
-  font-size: 8px;
+    text-align: left;
+    float: left;
+    color: #b3b3b3;
+    margin-top: 10px;
+    font-size: 8px;
 }
 #comment-lists .comment-floor{
-  float: left;
-  padding: 4px;
-  background: #eee;
-  color: #000;
-  text-shadow: none;
-  margin-right: 10px;
+    float: left;
+    padding: 4px;
+    background: #eee;
+    color: #000;
+    text-shadow: none;
+    margin-right: 10px;
 }
 #comment-lists .comment-time{
     /* float: right; */
@@ -250,9 +348,9 @@ overflow-x: hidden;
     margin-top: 10px;
 }
 #comment-lists p{
-  margin-top: 10px;
-  clear: both;
-  text-indent: 2em;
+    margin-top: 10px;
+    clear: both;
+    text-indent: 2em;
     text-shadow: none;
     font-weight: bold;
     /*color: transparent;*/
@@ -260,11 +358,11 @@ overflow-x: hidden;
     /*-webkit-background-clip: text;*/
 }
 html body .action .ui-btn-active{
-  color: #000;
-  text-shadow: none;
+    color: #000;
+    text-shadow: none;
 }
 .ui-page-header-fullscreen>.ui-content, .ui-page-footer-fullscreen>.ui-content{
-  /*padding-bottom: 60px;*/
+    /*padding-bottom: 60px;*/
 }
 @media screen and (max-width: 768px){
     .post{
@@ -284,43 +382,43 @@ html body .action .ui-btn-active{
     box-shadow: 2px 4px 6px #eee;
 }
 .post-title{
-  padding: 10px;
-  padding-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 .post-title ul{
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  /*text-align: center;*/
-  color: #ef5350;
-  font-size: 18px;
-  text-align: left;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    /*text-align: center;*/
+    color: #ef5350;
+    font-size: 18px;
+    text-align: left;
 }
 .post-title ul li{
-  display: inline;
-  margin-right: 10px;
+    display: inline;
+    margin-right: 10px;
 }
 .post-title img{
-  position: relative;
-  top: 1px;
-  height: 12px;
+    position: relative;
+    top: 1px;
+    height: 12px;
 }
 .post-body{
 
 }
 .post-body .post-body-content p{
-  word-wrap: break-word;
-  text-indent: 2em;
-  padding: 10px;
-  padding-bottom: 0;
-  /*color: #333;*/
-  text-align: left;
-  text-shadow: none;
-  font-weight: bold;
-  /*color: transparent;*/
-  /*animation: hue 5s linear infinite;*/
-  /*background-image: linear-gradient(to right, rgb(255,0,0), rgb(255,128,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255),  rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));*/
-/*-webkit-background-clip: text;*/
+    word-wrap: break-word;
+    text-indent: 2em;
+    padding: 10px;
+    padding-bottom: 0;
+    /*color: #333;*/
+    text-align: left;
+    text-shadow: none;
+    font-weight: bold;
+    /*color: transparent;*/
+    /*animation: hue 5s linear infinite;*/
+    /*background-image: linear-gradient(to right, rgb(255,0,0), rgb(255,128,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255),  rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));*/
+    /*-webkit-background-clip: text;*/
 }
 .post-actions{
 
@@ -334,50 +432,50 @@ html body .action .ui-btn-active{
 /*    }*/
 /*}*/
 .post-body-time{
-  text-align: right;
-  text-indent: 0em;
-  padding: 0px;
-  color: #b3b3b3;
-  padding-right: 10px;
-  font-size: 12px;
+    text-align: right;
+    text-indent: 0em;
+    padding: 0px;
+    color: #b3b3b3;
+    padding-right: 10px;
+    font-size: 12px;
 }
 
 .post-background1{
-  background-image: url("../images/posts_1.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-position: top;
-  background-size: contain;
+    background-image: url("../images/posts_1.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position: top;
+    background-size: contain;
 }
 
 .post-background2{
-  background-image: url("../images/posts_2.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-position: top;
-  background-size: contain;
+    background-image: url("../images/posts_2.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position: top;
+    background-size: contain;
 }
 
 .post-background3{
-  background-image: url("../images/posts_3.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-position: top;
-  background-size: contain;
+    background-image: url("../images/posts_3.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position: top;
+    background-size: contain;
 }
 
 /*性别*/
 /*.male{*/
-  /*color: #03a9f4;*/
-  /*border-bottom: 2px dashed #03a9f4;*/
+/*color: #03a9f4;*/
+/*border-bottom: 2px dashed #03a9f4;*/
 /*}*/
 /*.female{*/
-  /*color: #ff3333;*/
-  /*border-bottom: 2px dashed #ff3333;*/
+/*color: #ff3333;*/
+/*border-bottom: 2px dashed #ff3333;*/
 /*}*/
 /*.secrecy{*/
-  /*color: #424242;*/
-  /*border-bottom: 2px dashed #424242;*/
+/*color: #424242;*/
+/*border-bottom: 2px dashed #424242;*/
 /*}*/
 .male{
     color: #03a9f4;
@@ -396,32 +494,32 @@ html body .action .ui-btn-active{
 }
 
 #link a{
-  display: block;
-  word-wrap: break-word;
+    display: block;
+    word-wrap: break-word;
 }
 
 #footer > div > ul a{
-  background-color: #000;
-  border-color: none;
-  color: #fff;
-  text-shadow: none;
-  border-style:none;
-  border-radius: 0px;
-  border: 0px none #000;
+    background-color: #000;
+    border-color: none;
+    color: #fff;
+    text-shadow: none;
+    border-style:none;
+    border-radius: 0px;
+    border: 0px none #000;
 }
 
 /*表白*/
 #saylove-box{
-  padding: 10px;
-  max-width: 320px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 300px;
+    padding: 10px;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 300px;
 }
 .guess-hint{
-  font-size: 12px;
-  color: #757575;
+    font-size: 12px;
+    color: #757575;
 }
 #saylove-box > fieldset > div > div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
 
@@ -431,11 +529,11 @@ html body .action .ui-btn-active{
 }
 
 #textCountBox, #textCount{
-  font-size: 14px;
-  text-align: right;
-  color: #757575;
-  padding-top: 0px;
-  margin-top: 0;
+    font-size: 14px;
+    text-align: right;
+    color: #757575;
+    padding-top: 0px;
+    margin-top: 0;
 }
 #submit{
     color: #fff;
@@ -446,78 +544,78 @@ html body .action .ui-btn-active{
     float: right;
 }
 #hint img{
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  height: 82px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    height: 82px;
 }
 #Hint, #comment-hint{
-  color: #ff3333;
-  display: block;
-  word-wrap: break-word;
-  background-color: white;
-  padding: 10px;
-  font-size: 14px;
-  text-align: left;
-  line-height: 25px;
-  border-radius: 10px;
+    color: #ff3333;
+    display: block;
+    word-wrap: break-word;
+    background-color: white;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 25px;
+    border-radius: 10px;
 }
 
 /*搜索页*/
 #search-bars{
-  /*max-width: 320px;*/
-  display: block;
-  margin: 0 auto;
-  /*text-align: center;*/
+    /*max-width: 320px;*/
+    display: block;
+    margin: 0 auto;
+    /*text-align: center;*/
 }
 #search-bars > div.ui-field-contain{
-  max-width: 340px;
-  padding: 6px;
-  display: block;
-  margin: 0 auto;
+    max-width: 340px;
+    padding: 6px;
+    display: block;
+    margin: 0 auto;
 }
 #search-bars > div.ui-btn.ui-input-btn.ui-corner-all.ui-shadow.ui-btn-inline{
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 340px;
-  padding: 6px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 340px;
+    padding: 6px;
 }
 #search-bars a{
-  text-align: center;
-  margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /*帮助*/
 
 #help-box{
-  max-width: 320px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 60px;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 60px;
 }
 #help-box h4{
 
 }
 #help-box h5{
-  text-align: center;
-  color: #ff3333;
+    text-align: center;
+    color: #ff3333;
 }
 #help-box p{
-  text-indent: 2em;
+    text-indent: 2em;
 }
 #help-box img{
-  height: 24px;
+    height: 24px;
 }
 
 /*分享*/
 #share-bars{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 320px;
-  margin-top: 20px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 320px;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 768px){
@@ -531,13 +629,11 @@ html body .action .ui-btn-active{
     border-radius: 6px;
     /* box-shadow: 2px 3px 2px #d2d2d2; */
     margin-bottom: 10px;
-    border: 1px;
-    border-color: #0ae;
-    border-style: dashed;
+    border: 1px dashed #0ae;
 }
 #saylove-box legend{
-  background: #0ae;
-  color: #fff;
-  padding: 4px;
-  border-radius: 4px;
+    background: #0ae;
+    color: #fff;
+    padding: 4px;
+    border-radius: 4px;
 }
