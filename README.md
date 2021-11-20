@@ -1,5 +1,18 @@
-
 # 由Thinkphp5框架开发的告白墙
+
+
+下载慢的话，可以试试下面的通道：
+```
+https://github.com.cnpmjs.org/Haiwar/say-love-wall.git
+```
+
+```
+https://hub.fastgit.org/Haiwar/say-love-wall.git
+```
+
+```
+https://github.91chifun.workers.dev//https://github.com/Haiwar/say-love-wall.git
+```
 
 ## 圣诞主题（后台可变更）
 
