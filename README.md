@@ -23,6 +23,7 @@ https://github.91chifun.workers.dev//https://github.com/Haiwar/say-love-wall.git
 ![](https://upload-images.jianshu.io/upload_images/12353119-04067943ba661fc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/12353119-167307e4c08dee0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/12353119-1c455dce345a5f6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://i.loli.net/2021/11/20/7XEpCUgHA2NsJ1k.png)
 
 ## Thinks感谢！
 
