@@ -30,6 +30,9 @@ class CommentModel extends Model
     public function insertComment($data)
     {
         try{
+            if($data['contents'] === '<p><br></p>') {
+                return msg(-1,'','评论内容不能为空!');
+            }
             $data['ip'] =  get_client_ip();  // 不用session,用户可能没有表白
             $data['mtime'] = time();
             $result = $this->validate(['contents'=>'require'],['contents.require'=>'评论内容不能为空!'])->save($data);
