@@ -4,15 +4,16 @@ $(document).ready(function() {
     });
     var guess_post_id = "";
     var page = parseInt($("#pages").attr("page"));
-    var mode = parseInt($("#pages").attr("mode"));
+    let mode = parseInt($("#pages").attr("mode"));
     getPage(page, mode);
     var max = parseInt($("#pages").attr("max"));
     $("#previous").click(function(event) {
         page = parseInt($("#pages").attr("page"));
         max = parseInt($("#pages").attr("max"));
+        let modeValue = parseInt($("#pages").attr("mode"));
         $(this).removeClass("shi");
         if (page - 1 > 0) {
-            getPage(page - 1, mode);
+            getPage(page - 1, modeValue);
             $("#pages").attr("page", page - 1)
         } else {
             layer.msg("啊哦，前面没有了~", {
@@ -25,9 +26,10 @@ $(document).ready(function() {
     });
     $("#next").click(function(event) {
         page = parseInt($("#pages").attr("page"));
+        let modeValue = parseInt($("#pages").attr("mode"));
         max = parseInt($("#pages").attr("max"));
         if (page + 1 > max) {} else {
-            getPage(page + 1, mode);
+            getPage(page + 1, modeValue);
             $("#pages").attr("page", page + 1);
             gotoLocation()
         }
