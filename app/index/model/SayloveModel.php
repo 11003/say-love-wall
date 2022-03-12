@@ -39,28 +39,28 @@ class SayloveModel extends Model
         $page_later = ($page-1)*$limit;
         switch ($mode){
             case '0'://点赞最多的
-                $result =  $this->where($where)->limit($page_later,$limit)->order('love','DESC')->select();
+                $result =  $this->where($where)->cache(true)->limit($page_later,$limit)->order('love','DESC')->select();
                 return $this->output($result);
                 break;
             case '1'://按时间倒序显示(最新)
-                $result =  $this->where($where)->limit($page_later,$limit)->order('mtime DESC')->select();
+                $result =  $this->where($where)->cache(true)->limit($page_later,$limit)->order('mtime DESC')->select();
                 return $this->output($result);
                 break;
             case '2'://随机进入页面
                 $page_later = $this->rendomSum($limit);
-                $result =  $this->where($where)->limit($page_later,$limit)->order('love DESC')->select();
+                $result =  $this->where($where)->cache(true)->limit($page_later,$limit)->order('love DESC')->select();
                 return $this->output($result);
                 break;
             case '3'://点赞数最少排序
-                $result =  $this->where($where)->limit($page_later,$limit)->order('love ASC')->select();
+                $result =  $this->where($where)->cache(true)->limit($page_later,$limit)->order('love ASC')->select();
                 return $this->output($result);
                 break;
             case '4'://最旧帖子时间
-                $result =  $this->where($where)->limit($page_later,$limit)->order('mtime ASC')->select();
+                $result =  $this->where($where)->cache(true)->limit($page_later,$limit)->order('mtime ASC')->select();
                 return $this->output($result);
                 break;
             case '5'://搜索
-                $result =  $this->where($where)->order('love DESC')->select();
+                $result =  $this->where($where)->cache(true)->order('love DESC')->select();
                 return $this->output($result);
                 break;
         }
