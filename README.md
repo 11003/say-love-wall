@@ -44,6 +44,14 @@ https://github.91chifun.workers.dev//https://github.com/Haiwar/say-love-wall.git
 
 # 其他常见问题
 
+### PHP 版本
+
+支持 7.0 ~ 7.2
+
+### MySql 版本
+
+5.x
+
 ### 模块不存在:index
 
 解决方法：不要删除`data文件夹`
