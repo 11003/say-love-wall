@@ -108,24 +108,6 @@ composer install --ignore-platform-reqs
 [back/love_liuhai.sql](https://github.com/Haiwar/say-love-wall/tree/master/back)
 
 
-## 地址：
-
-- 在线测试 前台
-
-[http://love.musclewiki.cn](demo)
-
-- 后台
-
-（在线）
-
-账号：test
-
-密码：test
-
-[http://love.musclewiki.cn/admin/login/index.html](表白墙后台)
-
-
-
 # 最后
 
 MIT；
